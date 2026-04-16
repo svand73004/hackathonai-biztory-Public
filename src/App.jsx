@@ -3,6 +3,8 @@ import Chatbot from './components/Chatbot';
 import ToolSection from './components/ToolSection';
 import biztoryLogo from './assets/biztory_logo.png';
 import bgPattern from './assets/biztory_rounded_pattern_purple.gif';
+import heroVideo from './assets/pixar.mp4';
+import penguinLogo from './assets/penguin.png';
 import './App.css';
 
 function App() {
@@ -24,7 +26,7 @@ function App() {
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center gap-4">
             <img src={biztoryLogo} alt="Biztory Logo" className="h-10 md:h-12 w-auto object-contain brightness-0 invert" />
-            <h1 className="text-xl md:text-3xl font-bold tracking-tight text-white hidden sm:block">What's New</h1>
+            <h1 className="text-xl md:text-3xl font-bold tracking-tight text-white hidden sm:block">The Knowledge Master</h1>
           </div>
           <nav>
             <ul className="flex space-x-4 md:space-x-6 font-medium">
@@ -45,10 +47,28 @@ function App() {
 
       {/* Main content */}
       <main className="container mx-auto p-6 pt-28 md:pt-32 space-y-16 relative z-10">
+        
+        {/* Hero Video Section */}
+        <section className="w-full overflow-hidden rounded-3xl shadow-2xl border border-gray-200">
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            className="w-full h-auto object-cover max-h-[500px]"
+          >
+            <source src={heroVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </section>
+
         {/* Chatbot Section */}
         <section id="chatbot" className="bg-gray-100 rounded-3xl shadow-xl p-8 border border-gray-200">
           <div className="flex flex-col md:flex-row md:items-center gap-3 mb-8">
-            <h2 className="text-3xl font-bold text-purple-900 tracking-tight">Ask the Chatbot!</h2>
+            <div className="flex items-center gap-3">
+              <img src={penguinLogo} alt="Penguin" className="h-10 w-10 object-contain" />
+              <h2 className="text-3xl font-bold text-purple-900 tracking-tight">Ask the Penguin!</h2>
+            </div>
             <div className="inline-flex items-center px-3 py-1 bg-purple-100 text-purple-700 text-xs font-bold rounded-full uppercase tracking-wider w-fit">
               Powered by Snowflake
             </div>
