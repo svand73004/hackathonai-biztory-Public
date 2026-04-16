@@ -1,0 +1,822 @@
+{
+  "content" : [ {
+    "thinking" : {
+      "text" : "\nThe user is asking about what's new in Fivetran. I should search for recent Fivetran release notes/updates using the KnowledgeSearch tool, which contains release info from various platforms including Fivetran.\n"
+    },
+    "type" : "thinking"
+  }, {
+    "tool_use" : {
+      "client_side_execute" : false,
+      "input" : {
+        "agentic_search" : false,
+        "columns" : [ "RELEASE_NAME", "URL" ],
+        "limit" : 15,
+        "query" : "Fivetran new features updates release notes"
+      },
+      "name" : "KnowledgeSearch",
+      "tool_use_id" : "toolu_bdrk_01CrC5P9moDyPC3uS3zo34g8",
+      "type" : "cortex_search"
+    },
+    "type" : "tool_use"
+  }, {
+    "tool_result" : {
+      "content" : [ {
+        "json" : {
+          "search_results" : [ {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "2"
+            },
+            "doc_id" : "https://fivetran.com/docs/changelog",
+            "doc_title" : "March 2026",
+            "id" : "cs_8c02e834-7d72-41ec-b108-152dcb49c2d7",
+            "source_id" : 0,
+            "text" : "Connector SDK\nfivetran-connector-sdk\nPyPI package\nWe have released version 2.7.1 of the fivetran-connector-sdk PyPI package. This release includes the following updates:\nImproved logging for fivetran debug and fivetran reset\nMinor enhancements and improvements.\nUpdated tester - fixed vulnerabilities and logging.\n\nWe have released version 2.7.0 of the fivetran-connector-sdk PyPI package. This release includes the following updates:\nChanges the default Python version to 3.13 since the Performance Profiling feature uses py-spy, which is not supported by Python versions > 3.13. You can still change the runtime Python version to 3.14 by using --python-version argument passed to fivetran deploy command or directly from the setup form after deployment.\nMinor enhancements and improvements.\n\nWe have released version 2.6.2 of the fivetran-connector-sdk PyPI package. This release includes the following updates:\nA new help command for the PyPI package that provides users with additional information about the package and its usage.\nImproved error handling and logging.\nBetter handling of conflicting packages.\nMinor enhancements and improvements.\n\nFivetran Connector SDK\nConnector SDK connectors now support VPN tunnel as a connection option. A VPN tunnel provides a secure, encrypted site-to-site VPN connection between your network and Fivetran's network, enabling your connector code to access your source over a private network. You must have an Enterprise or Business Critical plan to use a VPN tunnel connection for Connector SDK.\n\nWe've enabled performance profiling for Connector SDK syncs. You can now analyze CPU usage and code execution time using flamegraphs generated via py-spy, available for production syncs (if supported) and local debugging.\n\nFor more information, including how to analyze flamegraphs, see our Performance Profiling documentation.\n\nfivetran-api-playground PyPI package\nWe have released version 1.1.4 of the fivetran-api-playground PyPI package. This release adds the following:\nUpgrades the flask library dependency to 3.1.3.\nUpgrades the faker library dependency to 40.4.0.\nUpgrades the colorama library dependency to 0.4.6.\n\n[Content truncated for length...]"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://docs.getdbt.com/docs/dbt-versions/dbt-cloud-release-notes",
+            "doc_title" : "March 2026",
+            "id" : "cs_b78023d8-ec80-49cd-a594-065122371ac3",
+            "source_id" : 0,
+            "text" : "Enhancement: The environment Connection profiles page has been updated. The profile name is now a clickable button that opens the view/edit drawer, the Connection column links to the connection details page in a new tab, and in edit mode a swap icon button lets you change the assigned profile. The previous ellipsis menu has been removed. For details, refer to About profiles.\n\nBeta: Apache Spark is now supported in the dbt Fusion engine CLI, enabling faster compilation and execution for Spark-based dbt projects. Fusion currently supports only Apache Spark 3.0. For more information, refer to Connect Apache Spark to Fusion.\n\nEnhancement: Cost Insights charts now include an Assets filter (Models/Tests/All) on the Cost, Usage, Query run time, and Builds tabs. Use the dropdown on each chart to filter the data you want to view; your selection is stored per tab. The former Model builds tab is now labeled Builds. For more information, see Explore cost data.\n\nEnhancement: Deferral now supports user-defined functions (UDFs). When you run a dbt command with --defer and --state, dbt resolves function() calls from the state manifest. This lets you run models that depend on UDFs without first building those UDFs in your current target.\n\nFix: Status messages that exceed the 1024 character limit are now automatically truncated to prevent validation errors and run timeouts. Previously, long status messages could cause runs to fail with unhandled exceptions or result in lost status information. The system now logs when truncation occurs to help identify and optimize verbose status messages.\n\nFix: Resolved an issue where retrying failed runs that were triggered from Git tags would use the wrong commit. Previously, when runs were triggered from Git tags instead of branches, the system would enter a detached HEAD state, causing retries to use the latest commit on HEAD rather than the original tagged commit. The fix now correctly preserves and uses the original Git tag reference when retrying runs, ensuring consistency between the initial run and any retries.\n\nNew: The dbt MCP server now includes product docs tools (search_product_docs and get_product_doc_pages) that let your AI assistant search and fetch pages from docs.getdbt.com in real time. Get responses grounded in the latest official dbt documentation rather than relying on training data or web searches, so you can stay in your development flow and trust the answers. This allows you to stay in your development flow and trust. These tools are enabled by default with no additional configuration. Restart your MCP server if you don't see the product docs tools in your MCP config. For more information, see the dbt MCP repo.\n\nEnhancement: The Model Timing tab displays an informative banner for dbt Fusion engine runs instead of the timing chart. The banner explains \"Model timing is not yet available for Fusion runs\" and provides context about threading differences. Non-Fusion runs continue to show the timing chart normally.\n\nBehavior change: Snowflake plans to increase the default column size for string and binary data types in May 2026. dbt-snowflake versions below v1.10.6 may fail to build certain incremental models when this change is deployed. Assess impact and take any required actions.\n\nNew: The new Semantic Layer YAML specification is now available on the dbt platform Latest release track. For an overview of the changes and steps how to migrate to the latest YAML spec, see Migrate to the latest YAML spec.\n\nBehavior change: New projects in trial, starter, or Enterprise accounts now default to Fusion Latest for all new environments with a supported adapter (Redshift, Snowflake, BigQuery, and Databricks). You can revert to another version by changing the dbt version in your environment settings."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://docs.getdbt.com/docs/dbt-versions/dbt-cloud-release-notes",
+            "doc_title" : "February 2026",
+            "id" : "cs_bb028b3e-63c1-46bb-b8b5-7f68c1e58b83",
+            "source_id" : 0,
+            "text" : "New: Advanced CI (dbt compare in orchestration) is now supported in the dbt Fusion engine. For more information, see Advanced CI.\n\nBeta: The dbt-salesforce adapter available in the dbt Fusion engine CLI is now in beta. For more information, see Salesforce Data 360 setup.\n\nEnhancement: The Analyst permission now has the project-level access to read repositories. See Project access for project permissions for more information.\n\nEnhancement: After a user accepts an email invite to access an SSO-protected dbt platform account, the UI now prompts them to log in with SSO to complete the process. This replaces the previous \"Joined successfully\" message, helping avoid confusion when users accept an invite but do not complete the SSO login flow.\n\nNew: Profiles let you define and manage connections, credentials, and attributes for deployment environments at the project level. dbt automatically creates profiles for existing projects and environments based on the current configurations, so you don't need to take any action. This is being rolled out in phases during the coming weeks.\n\nNew: Python UDFs are now supported and available in dbt Fusion engine when using Snowflake or BigQuery.\n\nEnhancement: Minor enhancements and UI updates to the Studio IDE, file explorer that replicate the VS Code IDE experience.\n\nEnhancement: Profile creation now displays specific validation error messages (such as \"Profile keys cannot contain spaces or special characters\") instead of generic error text, making it easier to identify and fix configuration issues.\n\nPrivate beta: Cost Insights shows estimated warehouse compute costs and run times for your dbt projects and models, directly in the dbt platform. It highlights cost reductions and efficiency gains from optimizations like state-aware orchestration across your project dashboard, model pages, and job details. See Set up Cost Insights and Explore cost data to learn more.\n\nNew: The dbt Semantic Layer now supports Omni as a partner integration. For more info, see Available integrations.\n\nEnhancement: We clarified documentation for cumulative log size limits on run endpoints, originally introduced in October 2025. When logs exceed the cumulative size limit, dbt omits them and displays a banner. No functional changes were made in February 2026. For more information, see Run visibility.\n\nNew: The immutable_where configuration is now supported for Snowflake dynamic tables. For more information, see Snowflake configurations.\n\nFix: The user invite details now show more information in invite status, giving admins visibility into users who accepted an invite to an SSO-protected account but haven't yet logged in via SSO. Previously, these invites were hidden, making it appear as if the user hadn't been invited. The Invites endpoints of the dbt platform Admin v2 API now include these additional statuses: 4 (PENDINGEMAIL_VERIFICATION) 5 (EMAIL_VERIFIED_SSO).\n\nEnhancement: Improved performance on Runs endpoint for Admin V2 API and run details in dbt platform when connecting with GCP."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://docs.snowflake.com/en/release-notes/new-features",
+            "doc_title" : "10.8",
+            "id" : "cs_121a2b77-bd4b-4c0f-bd37-13b79737d179",
+            "source_id" : 0,
+            "text" : "10.8 Release Notes: Mar 08, 2026-Mar 12, 2026\nSQL updates\nUser-defined types\nData collaboration updates\nBusiness Continuity and Disaster Recovery (BCDR) for listings\nRelease notes change log"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://docs.snowflake.com/en/release-notes/new-features",
+            "doc_title" : "10.9",
+            "id" : "cs_3930219e-a81e-4a67-ae74-9f73a5c37a5f",
+            "source_id" : 0,
+            "text" : "10.9 Release Notes: Mar 17, 2026-Mar 20, 2026\nNew features\nSnowflake supports directory, root stage, and SnowGit imports\nSecurity updates\nTSS history account usage view (General availability)\nSQL updates\nDML error logging for tables\nAdditional date and time formats\nAdditional fixed-position numeric format models\nSnowflake Cortex updates\nCKE document access history\nRelease notes change log"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://docs.getdbt.com/docs/dbt-versions/dbt-cloud-release-notes",
+            "doc_title" : "January 2026",
+            "id" : "cs_d484b078-d88a-4282-a09d-fe62d28bcd6b",
+            "source_id" : 0,
+            "text" : "Enhancement: The defer-env-id setting for choosing which deployment environment to defer to is now available in the Studio IDE. Previously, this configuration only worked for the dbt CLI\n\nBeta: The Analyst agent in dbt Insights is now in beta. dbt Copilot's AI assistant in Insights now uses a dropdown menu to select between Agent and Generate SQL, replacing the previous tab interface.\n\nEnhancement: The Studio IDE now includes search and replace functionality and a command palette, enabling you to quickly find and replace text across your project, navigate files, jump to symbols, and run IDE configuration commands. This feature is being rolled out in phases and will become available to all dbt platform accounts by mid-February.\n\nEnhancement: State-aware orchestration improvements: When a model fails a data test, state-aware orchestration rebuilds it on subsequent runs instead of reusing it from prior state to ensure dbt reevaluates data quality issues. State-aware orchestration now detects and rebuilds models whose tables are deleted from the warehouse, even when there are no code or data changes. Previously, tables deleted externally were not detected, and therefore not rebuilt, unless code or data had changed. For more information, see Handling deleted tables. State-aware orchestration is in private preview. See the prerequisites for using the feature.\n\nEnhancement: dbt Copilot correctly detects column names across various schema.yml files, adds only missing descriptions, and preserves existing ones.\n\nEnhancement: The Fusion CLI now automatically reads environment variables from a .env file in your current working directory (the folder you cd into and run dbt commands from in your terminal), if one exists. This provides a simple way to manage credentials and configuration without hardcoding them in your profiles.yml. The dbt VS Code extension also supports .env files as well as LSP-powered features. For more information, refer to Install Fusion CLI.\n\nNew: The new Semantic Layer YAML specification creates an open standard for defining metrics and dimensions that works across multiple platforms. The new spec is now live in the dbt Fusion engine. Key changes: Semantic models are now embedded within model YAML entries. This removes the need to manage YAML entries across multiple files. Measures are now simple metrics. Frequently used options are now top-level keys, reducing YAML nesting depth. For an overview of the changes and steps how to migrate to the latest YAML spec, see Migrate to the latest YAML spec.\n\nFix: Debug logs in the Run summary tab are now properly truncated to improve performance and user interface responsiveness. Previously, debug logs were not truncated correctly, causing slower page loads. You can access the full debug logs by clicking Download > Download all debug logs. For more information, see Run visibility.\n\nNew: The Semantic Layer querying within dbt Insights is now generally available (GA), enabling you to build SQL queries against the Semantic Layer without writing SQL code.\n\nEnhancement: Eligible dbt platform accounts in the Fusion private preview can now use Exposures."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://docs.snowflake.com/en/release-notes/new-features",
+            "doc_title" : "10.10",
+            "id" : "cs_70283bf3-f0ed-475b-81dc-af88d440fa3b",
+            "source_id" : 0,
+            "text" : "10.10 Release Notes: Mar 22, 2026-Mar 25, 2026\nSQL updates\nInterval data types (Preview)\nSnowflake Cortex updates\nBatch Cortex Search (Preview)\nRelease notes change log"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://learn.microsoft.com/en-us/power-bi/fundamentals/whats-new",
+            "doc_title" : "March 2026",
+            "id" : "cs_9f4d89ad-ce07-4fdd-aeb0-1e2d08a9f40b",
+            "source_id" : 0,
+            "text" : "Power BI's March 2026 update delivers powerful enhancements across reporting, AI, modeling, and visuals. Translytical task flows move to general availability, enabling end users to take action directly from reports. Modern visual defaults (preview) bring a fresh Fluent 2 design to your reports. Direct Lake in OneLake reaches general availability, unlocking incredible performance directly against OneLake. Plus, custom totals, series label leader lines, updated Copilot experiences, and expanded DAX capabilities make this a feature-packed release.\n\nGeneral:\n- Upcoming deprecation of old file picker experience in Power BI Desktop\n\nCopilot and AI:\n- Copilot pane user experience update\n- Copilot feedback update\n\nReporting:\n- Translytical task flows (Generally Available)\n- Modern visual defaults and customizing theme improvements (Preview)\n- Custom totals (Preview)\n- Series label leader lines for line charts\n- Report Theme Updates\n- Input slicer now supports conditional formatting\n\nModeling:\n- Direct Lake in OneLake (Generally Available)\n- TMDL View in web modeling (Preview)\n- DAX user-defined functions (Preview)\n\nData connectivity:\n- IBM Netezza ODBC Driver (Generally Available)\n- QuickBooks Online Connector Retirement\n\nVisualizations:\n- AI Narrative auto refresh"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau November 2025",
+            "id" : "cs_235beb21-4543-42f8-8740-f12b6f8206dc",
+            "source_id" : 0,
+            "text" : "Tableau November 2025 Release has new capabilities to help you uncover data-driven insights faster. Highlights include MCP Server, Published Data Sources, External Embedding, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau August 2025",
+            "id" : "cs_2730f431-5fd3-44b9-b18a-77a785ed99ab",
+            "source_id" : 0,
+            "text" : "Tableau August 2025 Release has new capabilities to help you get to insights faster. Highlights include Data Pro, Tableau Next and Slack, Viz Enhancements, Threshold Alerts, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau September 2025",
+            "id" : "cs_d0b33181-0a2a-4a9c-ba3c-5602999bc93a",
+            "source_id" : 0,
+            "text" : "Tableau September 2025 Release has new capabilities to help you dig deeper into your metrics. Highlights include New Enhanced Q&A Updates, Correlated Metrics, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2025.1",
+            "id" : "cs_133ba9dd-9297-4331-9476-394ee0ab1099",
+            "source_id" : 0,
+            "text" : "Tableau 2025.1 offers new ways to enhance your analytics with AI-powered solutions and provides early access to experience future releases. Highlights include Tableau Agent Multilingual Support, Private Connect for Tableau Cloud, Tableau Cloud Release Preview Sites and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://docs.snowflake.com/en/release-notes/new-features",
+            "doc_title" : "Mar 24, 2026",
+            "id" : "cs_44988bad-5bf9-4b52-bfaf-1204acfc47f0",
+            "source_id" : 0,
+            "text" : "Mar 24, 2026: ARRAY_REPEAT function\nMar 24, 2026: MAP_ENTRIES function"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau October 2025",
+            "id" : "cs_974a9c96-f147-442a-973b-c8042a4bf406",
+            "source_id" : 0,
+            "text" : "Tableau October 2025 Release has new capabilities to help you make smarter decisions. Highlights include Inspector, Tableau Next Slack Enhancements, Visualizations and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2024.3",
+            "id" : "cs_f7b318e8-4332-48bd-917d-26b50dd1806a",
+            "source_id" : 0,
+            "text" : "Tableau 2024.3 offers new ways to visualize your data and makes it easier for organizations to administer analytics at scale. Highlights include Tableau Cloud Manager, Table Viz Extension, Spatial Parameters, Tableau Cloud App for Microsoft Teams, and more."
+          } ],
+          "search_results_persist" : { }
+        },
+        "type" : "json"
+      } ],
+      "name" : "KnowledgeSearch",
+      "status" : "success",
+      "tool_use_id" : "toolu_bdrk_01CrC5P9moDyPC3uS3zo34g8",
+      "type" : "cortex_search"
+    },
+    "type" : "tool_result"
+  }, {
+    "tool_use" : {
+      "client_side_execute" : false,
+      "input" : {
+        "agentic_search" : false,
+        "columns" : [ "RELEASE_NAME", "URL" ],
+        "limit" : 15,
+        "query" : "Fivetran latest connectors destinations features announcements 2026"
+      },
+      "name" : "KnowledgeSearch",
+      "tool_use_id" : "toolu_bdrk_01AeJmSgLVpi6dx9WGLt5FGs",
+      "type" : "cortex_search"
+    },
+    "type" : "tool_use"
+  }, {
+    "tool_result" : {
+      "content" : [ {
+        "json" : {
+          "search_results" : [ {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://fivetran.com/docs/changelog",
+            "doc_title" : "March 2026",
+            "id" : "cs_974a3e4c-2603-4df1-a178-05f1fb6b12a2",
+            "source_id" : 0,
+            "text" : "Connector SDK\nfivetran-connector-sdk\nPyPI package\nWe have released version 2.7.1 of the fivetran-connector-sdk PyPI package. This release includes the following updates:\nImproved logging for fivetran debug and fivetran reset\nMinor enhancements and improvements.\nUpdated tester - fixed vulnerabilities and logging.\n\nWe have released version 2.7.0 of the fivetran-connector-sdk PyPI package. This release includes the following updates:\nChanges the default Python version to 3.13 since the Performance Profiling feature uses py-spy, which is not supported by Python versions > 3.13. You can still change the runtime Python version to 3.14 by using --python-version argument passed to fivetran deploy command or directly from the setup form after deployment.\nMinor enhancements and improvements.\n\nWe have released version 2.6.2 of the fivetran-connector-sdk PyPI package. This release includes the following updates:\nA new help command for the PyPI package that provides users with additional information about the package and its usage.\nImproved error handling and logging.\nBetter handling of conflicting packages.\nMinor enhancements and improvements.\n\nFivetran Connector SDK\nConnector SDK connectors now support VPN tunnel as a connection option. A VPN tunnel provides a secure, encrypted site-to-site VPN connection between your network and Fivetran's network, enabling your connector code to access your source over a private network. You must have an Enterprise or Business Critical plan to use a VPN tunnel connection for Connector SDK.\n\nWe've enabled performance profiling for Connector SDK syncs. You can now analyze CPU usage and code execution time using flamegraphs generated via py-spy, available for production syncs (if supported) and local debugging.\n\nFor more information, including how to analyze flamegraphs, see our Performance Profiling documentation.\n\nfivetran-api-playground PyPI package\nWe have released version 1.1.4 of the fivetran-api-playground PyPI package. This release adds the following:\nUpgrades the flask library dependency to 3.1.3.\nUpgrades the faker library dependency to 40.4.0.\nUpgrades the colorama library dependency to 0.4.6.\n\n[Content truncated for length...]"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://docs.getdbt.com/docs/dbt-versions/dbt-cloud-release-notes",
+            "doc_title" : "February 2026",
+            "id" : "cs_ccc6edef-91e7-482c-a28d-a14c5d310a30",
+            "source_id" : 0,
+            "text" : "New: Advanced CI (dbt compare in orchestration) is now supported in the dbt Fusion engine. For more information, see Advanced CI.\n\nBeta: The dbt-salesforce adapter available in the dbt Fusion engine CLI is now in beta. For more information, see Salesforce Data 360 setup.\n\nEnhancement: The Analyst permission now has the project-level access to read repositories. See Project access for project permissions for more information.\n\nEnhancement: After a user accepts an email invite to access an SSO-protected dbt platform account, the UI now prompts them to log in with SSO to complete the process. This replaces the previous \"Joined successfully\" message, helping avoid confusion when users accept an invite but do not complete the SSO login flow.\n\nNew: Profiles let you define and manage connections, credentials, and attributes for deployment environments at the project level. dbt automatically creates profiles for existing projects and environments based on the current configurations, so you don't need to take any action. This is being rolled out in phases during the coming weeks.\n\nNew: Python UDFs are now supported and available in dbt Fusion engine when using Snowflake or BigQuery.\n\nEnhancement: Minor enhancements and UI updates to the Studio IDE, file explorer that replicate the VS Code IDE experience.\n\nEnhancement: Profile creation now displays specific validation error messages (such as \"Profile keys cannot contain spaces or special characters\") instead of generic error text, making it easier to identify and fix configuration issues.\n\nPrivate beta: Cost Insights shows estimated warehouse compute costs and run times for your dbt projects and models, directly in the dbt platform. It highlights cost reductions and efficiency gains from optimizations like state-aware orchestration across your project dashboard, model pages, and job details. See Set up Cost Insights and Explore cost data to learn more.\n\nNew: The dbt Semantic Layer now supports Omni as a partner integration. For more info, see Available integrations.\n\nEnhancement: We clarified documentation for cumulative log size limits on run endpoints, originally introduced in October 2025. When logs exceed the cumulative size limit, dbt omits them and displays a banner. No functional changes were made in February 2026. For more information, see Run visibility.\n\nNew: The immutable_where configuration is now supported for Snowflake dynamic tables. For more information, see Snowflake configurations.\n\nFix: The user invite details now show more information in invite status, giving admins visibility into users who accepted an invite to an SSO-protected account but haven't yet logged in via SSO. Previously, these invites were hidden, making it appear as if the user hadn't been invited. The Invites endpoints of the dbt platform Admin v2 API now include these additional statuses: 4 (PENDINGEMAIL_VERIFICATION) 5 (EMAIL_VERIFIED_SSO).\n\nEnhancement: Improved performance on Runs endpoint for Admin V2 API and run details in dbt platform when connecting with GCP."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://docs.getdbt.com/docs/dbt-versions/dbt-cloud-release-notes",
+            "doc_title" : "March 2026",
+            "id" : "cs_3b98d1ec-0d95-4cd8-8362-5c786551a5e7",
+            "source_id" : 0,
+            "text" : "Enhancement: The environment Connection profiles page has been updated. The profile name is now a clickable button that opens the view/edit drawer, the Connection column links to the connection details page in a new tab, and in edit mode a swap icon button lets you change the assigned profile. The previous ellipsis menu has been removed. For details, refer to About profiles.\n\nBeta: Apache Spark is now supported in the dbt Fusion engine CLI, enabling faster compilation and execution for Spark-based dbt projects. Fusion currently supports only Apache Spark 3.0. For more information, refer to Connect Apache Spark to Fusion.\n\nEnhancement: Cost Insights charts now include an Assets filter (Models/Tests/All) on the Cost, Usage, Query run time, and Builds tabs. Use the dropdown on each chart to filter the data you want to view; your selection is stored per tab. The former Model builds tab is now labeled Builds. For more information, see Explore cost data.\n\nEnhancement: Deferral now supports user-defined functions (UDFs). When you run a dbt command with --defer and --state, dbt resolves function() calls from the state manifest. This lets you run models that depend on UDFs without first building those UDFs in your current target.\n\nFix: Status messages that exceed the 1024 character limit are now automatically truncated to prevent validation errors and run timeouts. Previously, long status messages could cause runs to fail with unhandled exceptions or result in lost status information. The system now logs when truncation occurs to help identify and optimize verbose status messages.\n\nFix: Resolved an issue where retrying failed runs that were triggered from Git tags would use the wrong commit. Previously, when runs were triggered from Git tags instead of branches, the system would enter a detached HEAD state, causing retries to use the latest commit on HEAD rather than the original tagged commit. The fix now correctly preserves and uses the original Git tag reference when retrying runs, ensuring consistency between the initial run and any retries.\n\nNew: The dbt MCP server now includes product docs tools (search_product_docs and get_product_doc_pages) that let your AI assistant search and fetch pages from docs.getdbt.com in real time. Get responses grounded in the latest official dbt documentation rather than relying on training data or web searches, so you can stay in your development flow and trust the answers. This allows you to stay in your development flow and trust. These tools are enabled by default with no additional configuration. Restart your MCP server if you don't see the product docs tools in your MCP config. For more information, see the dbt MCP repo.\n\nEnhancement: The Model Timing tab displays an informative banner for dbt Fusion engine runs instead of the timing chart. The banner explains \"Model timing is not yet available for Fusion runs\" and provides context about threading differences. Non-Fusion runs continue to show the timing chart normally.\n\nBehavior change: Snowflake plans to increase the default column size for string and binary data types in May 2026. dbt-snowflake versions below v1.10.6 may fail to build certain incremental models when this change is deployed. Assess impact and take any required actions.\n\nNew: The new Semantic Layer YAML specification is now available on the dbt platform Latest release track. For an overview of the changes and steps how to migrate to the latest YAML spec, see Migrate to the latest YAML spec.\n\nBehavior change: New projects in trial, starter, or Enterprise accounts now default to Fusion Latest for all new environments with a supported adapter (Redshift, Snowflake, BigQuery, and Databricks). You can revert to another version by changing the dbt version in your environment settings."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://learn.microsoft.com/en-us/power-bi/fundamentals/whats-new",
+            "doc_title" : "March 2026",
+            "id" : "cs_cf0faa28-6dc4-45a1-ae76-bea8bfe4af07",
+            "source_id" : 0,
+            "text" : "Power BI's March 2026 update delivers powerful enhancements across reporting, AI, modeling, and visuals. Translytical task flows move to general availability, enabling end users to take action directly from reports. Modern visual defaults (preview) bring a fresh Fluent 2 design to your reports. Direct Lake in OneLake reaches general availability, unlocking incredible performance directly against OneLake. Plus, custom totals, series label leader lines, updated Copilot experiences, and expanded DAX capabilities make this a feature-packed release.\n\nGeneral:\n- Upcoming deprecation of old file picker experience in Power BI Desktop\n\nCopilot and AI:\n- Copilot pane user experience update\n- Copilot feedback update\n\nReporting:\n- Translytical task flows (Generally Available)\n- Modern visual defaults and customizing theme improvements (Preview)\n- Custom totals (Preview)\n- Series label leader lines for line charts\n- Report Theme Updates\n- Input slicer now supports conditional formatting\n\nModeling:\n- Direct Lake in OneLake (Generally Available)\n- TMDL View in web modeling (Preview)\n- DAX user-defined functions (Preview)\n\nData connectivity:\n- IBM Netezza ODBC Driver (Generally Available)\n- QuickBooks Online Connector Retirement\n\nVisualizations:\n- AI Narrative auto refresh"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau January 2026",
+            "id" : "cs_07a0eca8-e594-46e5-ab63-05c1c002ffa4",
+            "source_id" : 0,
+            "text" : "Tableau January 2026 offers new capabilities to track and access your data. Highlights include Pace to Goal Insight, Mark Favorite Metrics, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://docs.snowflake.com/en/release-notes/new-features",
+            "doc_title" : "10.8",
+            "id" : "cs_14bd7de9-e12e-4615-ae21-f6127c1488fa",
+            "source_id" : 0,
+            "text" : "10.8 Release Notes: Mar 08, 2026-Mar 12, 2026\nSQL updates\nUser-defined types\nData collaboration updates\nBusiness Continuity and Disaster Recovery (BCDR) for listings\nRelease notes change log"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau March 2026",
+            "id" : "cs_6a630e0f-797e-49af-aba1-fd17e80bd566",
+            "source_id" : 0,
+            "text" : "Tableau March 2026 offers new capabilities to access smarter insights. Highlights include Rule-Based Semantic Model Authoring, Viz Enhancements, Enhanced Q&A Improvements, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://docs.snowflake.com/en/release-notes/new-features",
+            "doc_title" : "Mar 26, 2026",
+            "id" : "cs_8eb67148-3ee4-40d1-9148-0ffb31f4f59d",
+            "source_id" : 0,
+            "text" : "Mar 26, 2026: New SCHEDULER attribute for dynamic tables — General availability"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://docs.snowflake.com/en/release-notes/new-features",
+            "doc_title" : "Mar 24, 2026",
+            "id" : "cs_cf32c14c-fb68-47c7-9590-32f78ed620fa",
+            "source_id" : 0,
+            "text" : "Mar 24, 2026: ARRAY_REPEAT function\nMar 24, 2026: MAP_ENTRIES function"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2026.1",
+            "id" : "cs_aa4e715a-9dcd-4cf0-a752-d4537204e753",
+            "source_id" : 0,
+            "text" : "Tableau 2026.1 has new end-to-end capabilities to build, test, and share your insights. Highlights include Auto-Generate Semantic Models from Workspaces, Q&A Calibration, Enhanced Q&A Updates, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau November 2025",
+            "id" : "cs_917ac3ac-1d5e-4a73-8bfe-22db340a1649",
+            "source_id" : 0,
+            "text" : "Tableau November 2025 Release has new capabilities to help you uncover data-driven insights faster. Highlights include MCP Server, Published Data Sources, External Embedding, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://docs.snowflake.com/en/release-notes/new-features",
+            "doc_title" : "Mar 20, 2026",
+            "id" : "cs_70eb80c4-b718-47bb-ba5b-6ddedc60123d",
+            "source_id" : 0,
+            "text" : "Mar 20, 2026: Block public access to internal stages with IP allowlist exceptions (General availability)\nMar 20, 2026: DCM Projects (Preview)\nMar 20, 2026: Apache Iceberg™ tables: Support for the Azure Data Lake Storage Gen2 with external volumes (Preview)"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2025.1",
+            "id" : "cs_cdd7a2c8-f796-42d2-9a54-472daa86976b",
+            "source_id" : 0,
+            "text" : "Tableau 2025.1 offers new ways to enhance your analytics with AI-powered solutions and provides early access to experience future releases. Highlights include Tableau Agent Multilingual Support, Private Connect for Tableau Cloud, Tableau Cloud Release Preview Sites and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2025.2",
+            "id" : "cs_1609dc8c-1878-45ea-967e-ba1166a510f8",
+            "source_id" : 0,
+            "text" : "Tableau 2025.2 has new capabilities to help you deliver trusted insights with agentic analytics and embed vizzes and metrics where you need them. Highlights include Concierge, Semantic Learning, Tableau App for Google Workspace, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau August 2025",
+            "id" : "cs_62097a6f-d670-4cf1-8b0b-03c739dc3271",
+            "source_id" : 0,
+            "text" : "Tableau August 2025 Release has new capabilities to help you get to insights faster. Highlights include Data Pro, Tableau Next and Slack, Viz Enhancements, Threshold Alerts, and more."
+          } ],
+          "search_results_persist" : { }
+        },
+        "type" : "json"
+      } ],
+      "name" : "KnowledgeSearch",
+      "status" : "success",
+      "tool_use_id" : "toolu_bdrk_01AeJmSgLVpi6dx9WGLt5FGs",
+      "type" : "cortex_search"
+    },
+    "type" : "tool_result"
+  }, {
+    "thinking" : {
+      "text" : "\nThe search results have Fivetran content from March 2026. Let me extract the key updates from the Fivetran changelog. The first result has the most relevant content. Let me compile the bullet points from what I found.\n\nFrom the March 2026 Fivetran changelog:\n1. Connector SDK now supports VPN tunnel for secure site-to-site connections\n2. Performance profiling enabled for Connector SDK syncs (flamegraphs via py-spy)\n3. Released Connector SDK PyPI package v2.7.1 with improved logging\n4. Default Python version changed to 3.13 for Connector SDK (v2.7.0)\n5. New help command added to the Connector SDK PyPI package (v2.6.2)\n6. Released fivetran-api-playground PyPI package v1.1.4 with dependency upgrades\n\nI only have content from the March 2026 release. Let me search for more Fivetran-specific content to get a broader picture.\n"
+    },
+    "type" : "thinking"
+  }, {
+    "tool_use" : {
+      "client_side_execute" : false,
+      "input" : {
+        "agentic_search" : false,
+        "columns" : [ "RELEASE_NAME", "URL" ],
+        "limit" : 15,
+        "query" : "Fivetran new connectors destinations hybrid deployment transformations"
+      },
+      "name" : "KnowledgeSearch",
+      "tool_use_id" : "toolu_bdrk_01FwpQj5d1H8xdnqe8UghdYe",
+      "type" : "cortex_search"
+    },
+    "type" : "tool_use"
+  }, {
+    "tool_result" : {
+      "content" : [ {
+        "json" : {
+          "search_results" : [ {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://fivetran.com/docs/changelog",
+            "doc_title" : "March 2026",
+            "id" : "cs_66cb778a-8692-4271-870f-67dea856523a",
+            "source_id" : 0,
+            "text" : "Connector SDK\nfivetran-connector-sdk\nPyPI package\nWe have released version 2.7.1 of the fivetran-connector-sdk PyPI package. This release includes the following updates:\nImproved logging for fivetran debug and fivetran reset\nMinor enhancements and improvements.\nUpdated tester - fixed vulnerabilities and logging.\n\nWe have released version 2.7.0 of the fivetran-connector-sdk PyPI package. This release includes the following updates:\nChanges the default Python version to 3.13 since the Performance Profiling feature uses py-spy, which is not supported by Python versions > 3.13. You can still change the runtime Python version to 3.14 by using --python-version argument passed to fivetran deploy command or directly from the setup form after deployment.\nMinor enhancements and improvements.\n\nWe have released version 2.6.2 of the fivetran-connector-sdk PyPI package. This release includes the following updates:\nA new help command for the PyPI package that provides users with additional information about the package and its usage.\nImproved error handling and logging.\nBetter handling of conflicting packages.\nMinor enhancements and improvements.\n\nFivetran Connector SDK\nConnector SDK connectors now support VPN tunnel as a connection option. A VPN tunnel provides a secure, encrypted site-to-site VPN connection between your network and Fivetran's network, enabling your connector code to access your source over a private network. You must have an Enterprise or Business Critical plan to use a VPN tunnel connection for Connector SDK.\n\nWe've enabled performance profiling for Connector SDK syncs. You can now analyze CPU usage and code execution time using flamegraphs generated via py-spy, available for production syncs (if supported) and local debugging.\n\nFor more information, including how to analyze flamegraphs, see our Performance Profiling documentation.\n\nfivetran-api-playground PyPI package\nWe have released version 1.1.4 of the fivetran-api-playground PyPI package. This release adds the following:\nUpgrades the flask library dependency to 3.1.3.\nUpgrades the faker library dependency to 40.4.0.\nUpgrades the colorama library dependency to 0.4.6.\n\n[Content truncated for length...]"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://docs.getdbt.com/docs/dbt-versions/dbt-cloud-release-notes",
+            "doc_title" : "March 2026",
+            "id" : "cs_b9db242a-4014-4a2f-864e-c31e091555c0",
+            "source_id" : 0,
+            "text" : "Enhancement: The environment Connection profiles page has been updated. The profile name is now a clickable button that opens the view/edit drawer, the Connection column links to the connection details page in a new tab, and in edit mode a swap icon button lets you change the assigned profile. The previous ellipsis menu has been removed. For details, refer to About profiles.\n\nBeta: Apache Spark is now supported in the dbt Fusion engine CLI, enabling faster compilation and execution for Spark-based dbt projects. Fusion currently supports only Apache Spark 3.0. For more information, refer to Connect Apache Spark to Fusion.\n\nEnhancement: Cost Insights charts now include an Assets filter (Models/Tests/All) on the Cost, Usage, Query run time, and Builds tabs. Use the dropdown on each chart to filter the data you want to view; your selection is stored per tab. The former Model builds tab is now labeled Builds. For more information, see Explore cost data.\n\nEnhancement: Deferral now supports user-defined functions (UDFs). When you run a dbt command with --defer and --state, dbt resolves function() calls from the state manifest. This lets you run models that depend on UDFs without first building those UDFs in your current target.\n\nFix: Status messages that exceed the 1024 character limit are now automatically truncated to prevent validation errors and run timeouts. Previously, long status messages could cause runs to fail with unhandled exceptions or result in lost status information. The system now logs when truncation occurs to help identify and optimize verbose status messages.\n\nFix: Resolved an issue where retrying failed runs that were triggered from Git tags would use the wrong commit. Previously, when runs were triggered from Git tags instead of branches, the system would enter a detached HEAD state, causing retries to use the latest commit on HEAD rather than the original tagged commit. The fix now correctly preserves and uses the original Git tag reference when retrying runs, ensuring consistency between the initial run and any retries.\n\nNew: The dbt MCP server now includes product docs tools (search_product_docs and get_product_doc_pages) that let your AI assistant search and fetch pages from docs.getdbt.com in real time. Get responses grounded in the latest official dbt documentation rather than relying on training data or web searches, so you can stay in your development flow and trust the answers. This allows you to stay in your development flow and trust. These tools are enabled by default with no additional configuration. Restart your MCP server if you don't see the product docs tools in your MCP config. For more information, see the dbt MCP repo.\n\nEnhancement: The Model Timing tab displays an informative banner for dbt Fusion engine runs instead of the timing chart. The banner explains \"Model timing is not yet available for Fusion runs\" and provides context about threading differences. Non-Fusion runs continue to show the timing chart normally.\n\nBehavior change: Snowflake plans to increase the default column size for string and binary data types in May 2026. dbt-snowflake versions below v1.10.6 may fail to build certain incremental models when this change is deployed. Assess impact and take any required actions.\n\nNew: The new Semantic Layer YAML specification is now available on the dbt platform Latest release track. For an overview of the changes and steps how to migrate to the latest YAML spec, see Migrate to the latest YAML spec.\n\nBehavior change: New projects in trial, starter, or Enterprise accounts now default to Fusion Latest for all new environments with a supported adapter (Redshift, Snowflake, BigQuery, and Databricks). You can revert to another version by changing the dbt version in your environment settings."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://docs.getdbt.com/docs/dbt-versions/dbt-cloud-release-notes",
+            "doc_title" : "February 2026",
+            "id" : "cs_02f498d7-4a61-4720-ab18-5d7f60a71806",
+            "source_id" : 0,
+            "text" : "New: Advanced CI (dbt compare in orchestration) is now supported in the dbt Fusion engine. For more information, see Advanced CI.\n\nBeta: The dbt-salesforce adapter available in the dbt Fusion engine CLI is now in beta. For more information, see Salesforce Data 360 setup.\n\nEnhancement: The Analyst permission now has the project-level access to read repositories. See Project access for project permissions for more information.\n\nEnhancement: After a user accepts an email invite to access an SSO-protected dbt platform account, the UI now prompts them to log in with SSO to complete the process. This replaces the previous \"Joined successfully\" message, helping avoid confusion when users accept an invite but do not complete the SSO login flow.\n\nNew: Profiles let you define and manage connections, credentials, and attributes for deployment environments at the project level. dbt automatically creates profiles for existing projects and environments based on the current configurations, so you don't need to take any action. This is being rolled out in phases during the coming weeks.\n\nNew: Python UDFs are now supported and available in dbt Fusion engine when using Snowflake or BigQuery.\n\nEnhancement: Minor enhancements and UI updates to the Studio IDE, file explorer that replicate the VS Code IDE experience.\n\nEnhancement: Profile creation now displays specific validation error messages (such as \"Profile keys cannot contain spaces or special characters\") instead of generic error text, making it easier to identify and fix configuration issues.\n\nPrivate beta: Cost Insights shows estimated warehouse compute costs and run times for your dbt projects and models, directly in the dbt platform. It highlights cost reductions and efficiency gains from optimizations like state-aware orchestration across your project dashboard, model pages, and job details. See Set up Cost Insights and Explore cost data to learn more.\n\nNew: The dbt Semantic Layer now supports Omni as a partner integration. For more info, see Available integrations.\n\nEnhancement: We clarified documentation for cumulative log size limits on run endpoints, originally introduced in October 2025. When logs exceed the cumulative size limit, dbt omits them and displays a banner. No functional changes were made in February 2026. For more information, see Run visibility.\n\nNew: The immutable_where configuration is now supported for Snowflake dynamic tables. For more information, see Snowflake configurations.\n\nFix: The user invite details now show more information in invite status, giving admins visibility into users who accepted an invite to an SSO-protected account but haven't yet logged in via SSO. Previously, these invites were hidden, making it appear as if the user hadn't been invited. The Invites endpoints of the dbt platform Admin v2 API now include these additional statuses: 4 (PENDINGEMAIL_VERIFICATION) 5 (EMAIL_VERIFIED_SSO).\n\nEnhancement: Improved performance on Runs endpoint for Admin V2 API and run details in dbt platform when connecting with GCP."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://docs.getdbt.com/docs/dbt-versions/dbt-cloud-release-notes",
+            "doc_title" : "January 2026",
+            "id" : "cs_2c119900-6342-46bc-9d4f-0e3fa449c35e",
+            "source_id" : 0,
+            "text" : "Enhancement: The defer-env-id setting for choosing which deployment environment to defer to is now available in the Studio IDE. Previously, this configuration only worked for the dbt CLI\n\nBeta: The Analyst agent in dbt Insights is now in beta. dbt Copilot's AI assistant in Insights now uses a dropdown menu to select between Agent and Generate SQL, replacing the previous tab interface.\n\nEnhancement: The Studio IDE now includes search and replace functionality and a command palette, enabling you to quickly find and replace text across your project, navigate files, jump to symbols, and run IDE configuration commands. This feature is being rolled out in phases and will become available to all dbt platform accounts by mid-February.\n\nEnhancement: State-aware orchestration improvements: When a model fails a data test, state-aware orchestration rebuilds it on subsequent runs instead of reusing it from prior state to ensure dbt reevaluates data quality issues. State-aware orchestration now detects and rebuilds models whose tables are deleted from the warehouse, even when there are no code or data changes. Previously, tables deleted externally were not detected, and therefore not rebuilt, unless code or data had changed. For more information, see Handling deleted tables. State-aware orchestration is in private preview. See the prerequisites for using the feature.\n\nEnhancement: dbt Copilot correctly detects column names across various schema.yml files, adds only missing descriptions, and preserves existing ones.\n\nEnhancement: The Fusion CLI now automatically reads environment variables from a .env file in your current working directory (the folder you cd into and run dbt commands from in your terminal), if one exists. This provides a simple way to manage credentials and configuration without hardcoding them in your profiles.yml. The dbt VS Code extension also supports .env files as well as LSP-powered features. For more information, refer to Install Fusion CLI.\n\nNew: The new Semantic Layer YAML specification creates an open standard for defining metrics and dimensions that works across multiple platforms. The new spec is now live in the dbt Fusion engine. Key changes: Semantic models are now embedded within model YAML entries. This removes the need to manage YAML entries across multiple files. Measures are now simple metrics. Frequently used options are now top-level keys, reducing YAML nesting depth. For an overview of the changes and steps how to migrate to the latest YAML spec, see Migrate to the latest YAML spec.\n\nFix: Debug logs in the Run summary tab are now properly truncated to improve performance and user interface responsiveness. Previously, debug logs were not truncated correctly, causing slower page loads. You can access the full debug logs by clicking Download > Download all debug logs. For more information, see Run visibility.\n\nNew: The Semantic Layer querying within dbt Insights is now generally available (GA), enabling you to build SQL queries against the Semantic Layer without writing SQL code.\n\nEnhancement: Eligible dbt platform accounts in the Fusion private preview can now use Exposures."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau November 2025",
+            "id" : "cs_9ada6b8c-d5bf-4277-b611-250ef52c7dbe",
+            "source_id" : 0,
+            "text" : "Tableau November 2025 Release has new capabilities to help you uncover data-driven insights faster. Highlights include MCP Server, Published Data Sources, External Embedding, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2025.1",
+            "id" : "cs_57fa1367-4c86-46a1-8712-9607262bec9b",
+            "source_id" : 0,
+            "text" : "Tableau 2025.1 offers new ways to enhance your analytics with AI-powered solutions and provides early access to experience future releases. Highlights include Tableau Agent Multilingual Support, Private Connect for Tableau Cloud, Tableau Cloud Release Preview Sites and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2025.2",
+            "id" : "cs_5bbbd6d3-5e26-4845-94e8-c5956dfb0f00",
+            "source_id" : 0,
+            "text" : "Tableau 2025.2 has new capabilities to help you deliver trusted insights with agentic analytics and embed vizzes and metrics where you need them. Highlights include Concierge, Semantic Learning, Tableau App for Google Workspace, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2025.3",
+            "id" : "cs_4fd4d3f7-8544-47d3-8483-28eb07d2fecd",
+            "source_id" : 0,
+            "text" : "Tableau 2025.3 offers new capabilities to help you unlock AI-powered analytics where you work. Highlights include Q&A Calibration, Tableau Agent in Tableau Server, Dashboard Narratives and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://docs.snowflake.com/en/release-notes/new-features",
+            "doc_title" : "10.8",
+            "id" : "cs_f27c34e3-ebad-40c2-9b79-714c581d7d4a",
+            "source_id" : 0,
+            "text" : "10.8 Release Notes: Mar 08, 2026-Mar 12, 2026\nSQL updates\nUser-defined types\nData collaboration updates\nBusiness Continuity and Disaster Recovery (BCDR) for listings\nRelease notes change log"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2026.1",
+            "id" : "cs_3f89bcf0-c699-4cff-afa4-67663d855605",
+            "source_id" : 0,
+            "text" : "Tableau 2026.1 has new end-to-end capabilities to build, test, and share your insights. Highlights include Auto-Generate Semantic Models from Workspaces, Q&A Calibration, Enhanced Q&A Updates, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://learn.microsoft.com/en-us/power-bi/fundamentals/whats-new",
+            "doc_title" : "March 2026",
+            "id" : "cs_36d9a886-48a4-47aa-b375-a651141aca02",
+            "source_id" : 0,
+            "text" : "Power BI's March 2026 update delivers powerful enhancements across reporting, AI, modeling, and visuals. Translytical task flows move to general availability, enabling end users to take action directly from reports. Modern visual defaults (preview) bring a fresh Fluent 2 design to your reports. Direct Lake in OneLake reaches general availability, unlocking incredible performance directly against OneLake. Plus, custom totals, series label leader lines, updated Copilot experiences, and expanded DAX capabilities make this a feature-packed release.\n\nGeneral:\n- Upcoming deprecation of old file picker experience in Power BI Desktop\n\nCopilot and AI:\n- Copilot pane user experience update\n- Copilot feedback update\n\nReporting:\n- Translytical task flows (Generally Available)\n- Modern visual defaults and customizing theme improvements (Preview)\n- Custom totals (Preview)\n- Series label leader lines for line charts\n- Report Theme Updates\n- Input slicer now supports conditional formatting\n\nModeling:\n- Direct Lake in OneLake (Generally Available)\n- TMDL View in web modeling (Preview)\n- DAX user-defined functions (Preview)\n\nData connectivity:\n- IBM Netezza ODBC Driver (Generally Available)\n- QuickBooks Online Connector Retirement\n\nVisualizations:\n- AI Narrative auto refresh"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2024.3",
+            "id" : "cs_c2cdbc52-3ff8-48d3-b2e7-220c8607cc40",
+            "source_id" : 0,
+            "text" : "Tableau 2024.3 offers new ways to visualize your data and makes it easier for organizations to administer analytics at scale. Highlights include Tableau Cloud Manager, Table Viz Extension, Spatial Parameters, Tableau Cloud App for Microsoft Teams, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2024.1",
+            "id" : "cs_6fba535c-0ea4-449d-87eb-870aa11efcca",
+            "source_id" : 0,
+            "text" : "Tableau 2024.1 has new capabilities that help you drive better and faster decision-making with trusted generative AI. Highlights include Tableau Pulse, Amazon Marketplace availability, Viz Navigation for Text Table, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau August 2025",
+            "id" : "cs_57e73607-bbb3-494d-84b3-a03eb462b6e9",
+            "source_id" : 0,
+            "text" : "Tableau August 2025 Release has new capabilities to help you get to insights faster. Highlights include Data Pro, Tableau Next and Slack, Viz Enhancements, Threshold Alerts, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2023.2",
+            "id" : "cs_1a4f3164-5627-43f0-b632-d6706b7b8640",
+            "source_id" : 0,
+            "text" : "Tableau 2023.2 has new capabilities that help you analyze your data more effectively and efficiently. Highlights include unified tooltips, a new Data Cloud connector, multi-row calculations in Tableau Prep, and more."
+          } ],
+          "search_results_persist" : { }
+        },
+        "type" : "json"
+      } ],
+      "name" : "KnowledgeSearch",
+      "status" : "success",
+      "tool_use_id" : "toolu_bdrk_01FwpQj5d1H8xdnqe8UghdYe",
+      "type" : "cortex_search"
+    },
+    "type" : "tool_result"
+  }, {
+    "thinking" : {
+      "text" : "\nThe search results are mostly returning the same Fivetran March 2026 content. Let me extract the key points from what I have. The content mentions several updates from the March 2026 Fivetran changelog. Let me compile the bullet points based on what's available.\n\nFrom the Fivetran March 2026 changelog:\n1. Connector SDK connectors now support VPN tunnel for secure private network connections\n2. Performance profiling enabled for Connector SDK syncs with flamegraphs via py-spy\n3. Released Connector SDK PyPI package v2.7.1 with improved logging for debug and reset\n4. Default Python version changed to 3.13 for Connector SDK (v2.7.0)\n5. New help command added to Connector SDK PyPI package (v2.6.2)\n6. Better error handling and handling of conflicting packages in SDK\n7. Released fivetran-api-playground PyPI package v1.1.4 with dependency upgrades\n\nThe content was truncated. Let me search for more Fivetran-specific content to potentially get additional bullet points about connectors, destinations, etc.\n"
+    },
+    "type" : "thinking"
+  }, {
+    "tool_use" : {
+      "client_side_execute" : false,
+      "input" : {
+        "agentic_search" : false,
+        "columns" : [ "RELEASE_NAME", "URL" ],
+        "limit" : 10,
+        "query" : "Fivetran changelog source connector update new release March 2026"
+      },
+      "name" : "KnowledgeSearch",
+      "tool_use_id" : "toolu_bdrk_01GPfkUi9SBH11UPGfgKqZET",
+      "type" : "cortex_search"
+    },
+    "type" : "tool_use"
+  }, {
+    "tool_result" : {
+      "content" : [ {
+        "json" : {
+          "search_results" : [ {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "2"
+            },
+            "doc_id" : "https://fivetran.com/docs/changelog",
+            "doc_title" : "March 2026",
+            "id" : "cs_a767289a-5a5f-42ab-b4e3-63576f4aee81",
+            "source_id" : 0,
+            "text" : "Connector SDK\nfivetran-connector-sdk\nPyPI package\nWe have released version 2.7.1 of the fivetran-connector-sdk PyPI package. This release includes the following updates:\nImproved logging for fivetran debug and fivetran reset\nMinor enhancements and improvements.\nUpdated tester - fixed vulnerabilities and logging.\n\nWe have released version 2.7.0 of the fivetran-connector-sdk PyPI package. This release includes the following updates:\nChanges the default Python version to 3.13 since the Performance Profiling feature uses py-spy, which is not supported by Python versions > 3.13. You can still change the runtime Python version to 3.14 by using --python-version argument passed to fivetran deploy command or directly from the setup form after deployment.\nMinor enhancements and improvements.\n\nWe have released version 2.6.2 of the fivetran-connector-sdk PyPI package. This release includes the following updates:\nA new help command for the PyPI package that provides users with additional information about the package and its usage.\nImproved error handling and logging.\nBetter handling of conflicting packages.\nMinor enhancements and improvements.\n\nFivetran Connector SDK\nConnector SDK connectors now support VPN tunnel as a connection option. A VPN tunnel provides a secure, encrypted site-to-site VPN connection between your network and Fivetran's network, enabling your connector code to access your source over a private network. You must have an Enterprise or Business Critical plan to use a VPN tunnel connection for Connector SDK.\n\nWe've enabled performance profiling for Connector SDK syncs. You can now analyze CPU usage and code execution time using flamegraphs generated via py-spy, available for production syncs (if supported) and local debugging.\n\nFor more information, including how to analyze flamegraphs, see our Performance Profiling documentation.\n\nfivetran-api-playground PyPI package\nWe have released version 1.1.4 of the fivetran-api-playground PyPI package. This release adds the following:\nUpgrades the flask library dependency to 3.1.3.\nUpgrades the faker library dependency to 40.4.0.\nUpgrades the colorama library dependency to 0.4.6.\n\n[Content truncated for length...]"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://learn.microsoft.com/en-us/power-bi/fundamentals/whats-new",
+            "doc_title" : "March 2026",
+            "id" : "cs_d02eb6b6-dcfe-454e-a3b2-131499eb45aa",
+            "source_id" : 0,
+            "text" : "Power BI's March 2026 update delivers powerful enhancements across reporting, AI, modeling, and visuals. Translytical task flows move to general availability, enabling end users to take action directly from reports. Modern visual defaults (preview) bring a fresh Fluent 2 design to your reports. Direct Lake in OneLake reaches general availability, unlocking incredible performance directly against OneLake. Plus, custom totals, series label leader lines, updated Copilot experiences, and expanded DAX capabilities make this a feature-packed release.\n\nGeneral:\n- Upcoming deprecation of old file picker experience in Power BI Desktop\n\nCopilot and AI:\n- Copilot pane user experience update\n- Copilot feedback update\n\nReporting:\n- Translytical task flows (Generally Available)\n- Modern visual defaults and customizing theme improvements (Preview)\n- Custom totals (Preview)\n- Series label leader lines for line charts\n- Report Theme Updates\n- Input slicer now supports conditional formatting\n\nModeling:\n- Direct Lake in OneLake (Generally Available)\n- TMDL View in web modeling (Preview)\n- DAX user-defined functions (Preview)\n\nData connectivity:\n- IBM Netezza ODBC Driver (Generally Available)\n- QuickBooks Online Connector Retirement\n\nVisualizations:\n- AI Narrative auto refresh"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://docs.snowflake.com/en/release-notes/new-features",
+            "doc_title" : "10.8",
+            "id" : "cs_b31aa870-9a95-4016-9a8a-08e41b4934e0",
+            "source_id" : 0,
+            "text" : "10.8 Release Notes: Mar 08, 2026-Mar 12, 2026\nSQL updates\nUser-defined types\nData collaboration updates\nBusiness Continuity and Disaster Recovery (BCDR) for listings\nRelease notes change log"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://docs.snowflake.com/en/release-notes/new-features",
+            "doc_title" : "Mar 26, 2026",
+            "id" : "cs_e9b91d55-6af3-4b3d-885f-3b4f8928f29e",
+            "source_id" : 0,
+            "text" : "Mar 26, 2026: New SCHEDULER attribute for dynamic tables — General availability"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://docs.getdbt.com/docs/dbt-versions/dbt-cloud-release-notes",
+            "doc_title" : "February 2026",
+            "id" : "cs_3cf10d9f-2144-477b-9fd2-a499ffd4d98c",
+            "source_id" : 0,
+            "text" : "New: Advanced CI (dbt compare in orchestration) is now supported in the dbt Fusion engine. For more information, see Advanced CI.\n\nBeta: The dbt-salesforce adapter available in the dbt Fusion engine CLI is now in beta. For more information, see Salesforce Data 360 setup.\n\nEnhancement: The Analyst permission now has the project-level access to read repositories. See Project access for project permissions for more information.\n\nEnhancement: After a user accepts an email invite to access an SSO-protected dbt platform account, the UI now prompts them to log in with SSO to complete the process. This replaces the previous \"Joined successfully\" message, helping avoid confusion when users accept an invite but do not complete the SSO login flow.\n\nNew: Profiles let you define and manage connections, credentials, and attributes for deployment environments at the project level. dbt automatically creates profiles for existing projects and environments based on the current configurations, so you don't need to take any action. This is being rolled out in phases during the coming weeks.\n\nNew: Python UDFs are now supported and available in dbt Fusion engine when using Snowflake or BigQuery.\n\nEnhancement: Minor enhancements and UI updates to the Studio IDE, file explorer that replicate the VS Code IDE experience.\n\nEnhancement: Profile creation now displays specific validation error messages (such as \"Profile keys cannot contain spaces or special characters\") instead of generic error text, making it easier to identify and fix configuration issues.\n\nPrivate beta: Cost Insights shows estimated warehouse compute costs and run times for your dbt projects and models, directly in the dbt platform. It highlights cost reductions and efficiency gains from optimizations like state-aware orchestration across your project dashboard, model pages, and job details. See Set up Cost Insights and Explore cost data to learn more.\n\nNew: The dbt Semantic Layer now supports Omni as a partner integration. For more info, see Available integrations.\n\nEnhancement: We clarified documentation for cumulative log size limits on run endpoints, originally introduced in October 2025. When logs exceed the cumulative size limit, dbt omits them and displays a banner. No functional changes were made in February 2026. For more information, see Run visibility.\n\nNew: The immutable_where configuration is now supported for Snowflake dynamic tables. For more information, see Snowflake configurations.\n\nFix: The user invite details now show more information in invite status, giving admins visibility into users who accepted an invite to an SSO-protected account but haven't yet logged in via SSO. Previously, these invites were hidden, making it appear as if the user hadn't been invited. The Invites endpoints of the dbt platform Admin v2 API now include these additional statuses: 4 (PENDINGEMAIL_VERIFICATION) 5 (EMAIL_VERIFIED_SSO).\n\nEnhancement: Improved performance on Runs endpoint for Admin V2 API and run details in dbt platform when connecting with GCP."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://docs.getdbt.com/docs/dbt-versions/dbt-cloud-release-notes",
+            "doc_title" : "March 2026",
+            "id" : "cs_25dbbdb0-26dc-4167-b86b-e4bc770f49e9",
+            "source_id" : 0,
+            "text" : "Enhancement: The environment Connection profiles page has been updated. The profile name is now a clickable button that opens the view/edit drawer, the Connection column links to the connection details page in a new tab, and in edit mode a swap icon button lets you change the assigned profile. The previous ellipsis menu has been removed. For details, refer to About profiles.\n\nBeta: Apache Spark is now supported in the dbt Fusion engine CLI, enabling faster compilation and execution for Spark-based dbt projects. Fusion currently supports only Apache Spark 3.0. For more information, refer to Connect Apache Spark to Fusion.\n\nEnhancement: Cost Insights charts now include an Assets filter (Models/Tests/All) on the Cost, Usage, Query run time, and Builds tabs. Use the dropdown on each chart to filter the data you want to view; your selection is stored per tab. The former Model builds tab is now labeled Builds. For more information, see Explore cost data.\n\nEnhancement: Deferral now supports user-defined functions (UDFs). When you run a dbt command with --defer and --state, dbt resolves function() calls from the state manifest. This lets you run models that depend on UDFs without first building those UDFs in your current target.\n\nFix: Status messages that exceed the 1024 character limit are now automatically truncated to prevent validation errors and run timeouts. Previously, long status messages could cause runs to fail with unhandled exceptions or result in lost status information. The system now logs when truncation occurs to help identify and optimize verbose status messages.\n\nFix: Resolved an issue where retrying failed runs that were triggered from Git tags would use the wrong commit. Previously, when runs were triggered from Git tags instead of branches, the system would enter a detached HEAD state, causing retries to use the latest commit on HEAD rather than the original tagged commit. The fix now correctly preserves and uses the original Git tag reference when retrying runs, ensuring consistency between the initial run and any retries.\n\nNew: The dbt MCP server now includes product docs tools (search_product_docs and get_product_doc_pages) that let your AI assistant search and fetch pages from docs.getdbt.com in real time. Get responses grounded in the latest official dbt documentation rather than relying on training data or web searches, so you can stay in your development flow and trust the answers. This allows you to stay in your development flow and trust. These tools are enabled by default with no additional configuration. Restart your MCP server if you don't see the product docs tools in your MCP config. For more information, see the dbt MCP repo.\n\nEnhancement: The Model Timing tab displays an informative banner for dbt Fusion engine runs instead of the timing chart. The banner explains \"Model timing is not yet available for Fusion runs\" and provides context about threading differences. Non-Fusion runs continue to show the timing chart normally.\n\nBehavior change: Snowflake plans to increase the default column size for string and binary data types in May 2026. dbt-snowflake versions below v1.10.6 may fail to build certain incremental models when this change is deployed. Assess impact and take any required actions.\n\nNew: The new Semantic Layer YAML specification is now available on the dbt platform Latest release track. For an overview of the changes and steps how to migrate to the latest YAML spec, see Migrate to the latest YAML spec.\n\nBehavior change: New projects in trial, starter, or Enterprise accounts now default to Fusion Latest for all new environments with a supported adapter (Redshift, Snowflake, BigQuery, and Databricks). You can revert to another version by changing the dbt version in your environment settings."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau March 2026",
+            "id" : "cs_5cacc76c-5bfc-4406-be6f-50836daaf6dc",
+            "source_id" : 0,
+            "text" : "Tableau March 2026 offers new capabilities to access smarter insights. Highlights include Rule-Based Semantic Model Authoring, Viz Enhancements, Enhanced Q&A Improvements, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://docs.snowflake.com/en/release-notes/new-features",
+            "doc_title" : "10.10",
+            "id" : "cs_b958ccc0-4edd-4e71-995a-1b667d30dafc",
+            "source_id" : 0,
+            "text" : "10.10 Release Notes: Mar 22, 2026-Mar 25, 2026\nSQL updates\nInterval data types (Preview)\nSnowflake Cortex updates\nBatch Cortex Search (Preview)\nRelease notes change log"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://docs.snowflake.com/en/release-notes/new-features",
+            "doc_title" : "10.9",
+            "id" : "cs_a88d5403-3fce-456b-aa56-73f57f0c7c01",
+            "source_id" : 0,
+            "text" : "10.9 Release Notes: Mar 17, 2026-Mar 20, 2026\nNew features\nSnowflake supports directory, root stage, and SnowGit imports\nSecurity updates\nTSS history account usage view (General availability)\nSQL updates\nDML error logging for tables\nAdditional date and time formats\nAdditional fixed-position numeric format models\nSnowflake Cortex updates\nCKE document access history\nRelease notes change log"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://docs.snowflake.com/en/release-notes/new-features",
+            "doc_title" : "Mar 20, 2026",
+            "id" : "cs_23cfbb07-6559-4a5e-b12c-42614f7bf7d7",
+            "source_id" : 0,
+            "text" : "Mar 20, 2026: Block public access to internal stages with IP allowlist exceptions (General availability)\nMar 20, 2026: DCM Projects (Preview)\nMar 20, 2026: Apache Iceberg™ tables: Support for the Azure Data Lake Storage Gen2 with external volumes (Preview)"
+          } ],
+          "search_results_persist" : { }
+        },
+        "type" : "json"
+      } ],
+      "name" : "KnowledgeSearch",
+      "status" : "success",
+      "tool_use_id" : "toolu_bdrk_01GPfkUi9SBH11UPGfgKqZET",
+      "type" : "cortex_search"
+    },
+    "type" : "tool_result"
+  }, {
+    "thinking" : {
+      "text" : "\nI'm getting the same truncated Fivetran content. Let me try to use the analyst tool to get the full content from the HTML_PAGES_SPLIT table for Fivetran, which should have more complete information.\n"
+    },
+    "type" : "thinking"
+  }, {
+    "tool_use" : {
+      "client_side_execute" : false,
+      "input" : {
+        "has_time_column" : true,
+        "need_future_forecasting_data" : false,
+        "original_query" : "What is new in Fivetran? Give me a list of up to 10 short bullet points.",
+        "previous_related_tool_result_id" : "",
+        "query" : "Show me all distinct content entries from URLs containing 'fivetran', returning the content and release name. Limit to 10 rows."
+      },
+      "name" : "KnowledgeAnalyst",
+      "tool_use_id" : "toolu_bdrk_01RqeB5avvszuWKtm4w5iozf",
+      "type" : "cortex_analyst_text_to_sql"
+    },
+    "type" : "tool_use"
+  }, {
+    "tool_result" : {
+      "content" : [ {
+        "json" : {
+          "error" : {
+            "code" : 0,
+            "message" : "Unable to run the command. You must specify the warehouse to use by either setting the warehouse field in the body of the request or by setting the DEFAULT_NAMESPACE property for the current user.",
+            "type" : "internal_error"
+          },
+          "sql" : "WITH __html_pages_split AS (\n  SELECT\n    content,\n    release_name,\n    url,\n    fetched_at\n  FROM SBX_ROBERTPRETORIUS.HACKATHON.HTML_PAGES_SPLIT\n)\nSELECT DISTINCT\n  content,\n  release_name,\n  MIN(fetched_at) AS min_fetched_at,\n  MAX(fetched_at) AS max_fetched_at,\n  COUNT(fetched_at) AS fetch_count\nFROM __html_pages_split\nWHERE\n  url ILIKE '%fivetran%' AND fetched_at <= CURRENT_TIMESTAMP()\nGROUP BY\n  content,\n  release_name\nORDER BY\n  max_fetched_at DESC NULLS LAST\nLIMIT 10\n -- Generated by Cortex Analyst (request_id: 673581c2-ebef-47b0-9ded-5374dfc42fbf)\n;",
+          "text" : "The question is clear and I can answer it with the following SQL."
+        },
+        "type" : "json"
+      } ],
+      "name" : "KnowledgeAnalyst",
+      "status" : "error",
+      "tool_use_id" : "toolu_bdrk_01RqeB5avvszuWKtm4w5iozf",
+      "type" : "cortex_analyst_text_to_sql"
+    },
+    "type" : "tool_result"
+  }, {
+    "thinking" : {
+      "text" : "\nThe analyst tool gave an error about warehouse. Let me try a different approach - let me use the search tool one more time with a different query to try to get more Fivetran content.\n"
+    },
+    "type" : "thinking"
+  }, {
+    "tool_use" : {
+      "client_side_execute" : false,
+      "input" : {
+        "agentic_search" : false,
+        "columns" : [ "RELEASE_NAME", "URL" ],
+        "limit" : 10,
+        "query" : "Fivetran API playground SDK performance profiling VPN tunnel Python"
+      },
+      "name" : "KnowledgeSearch",
+      "tool_use_id" : "toolu_bdrk_01Y3hbLkxGXp8jcnNKGryYPx",
+      "type" : "cortex_search"
+    },
+    "type" : "tool_use"
+  }, {
+    "tool_result" : {
+      "content" : [ {
+        "json" : {
+          "search_results" : [ {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "3"
+            },
+            "doc_id" : "https://fivetran.com/docs/changelog",
+            "doc_title" : "March 2026",
+            "id" : "cs_ae9f6d2c-f98b-4d26-b5ef-974380614fa2",
+            "source_id" : 0,
+            "text" : "Connector SDK\nfivetran-connector-sdk\nPyPI package\nWe have released version 2.7.1 of the fivetran-connector-sdk PyPI package. This release includes the following updates:\nImproved logging for fivetran debug and fivetran reset\nMinor enhancements and improvements.\nUpdated tester - fixed vulnerabilities and logging.\n\nWe have released version 2.7.0 of the fivetran-connector-sdk PyPI package. This release includes the following updates:\nChanges the default Python version to 3.13 since the Performance Profiling feature uses py-spy, which is not supported by Python versions > 3.13. You can still change the runtime Python version to 3.14 by using --python-version argument passed to fivetran deploy command or directly from the setup form after deployment.\nMinor enhancements and improvements.\n\nWe have released version 2.6.2 of the fivetran-connector-sdk PyPI package. This release includes the following updates:\nA new help command for the PyPI package that provides users with additional information about the package and its usage.\nImproved error handling and logging.\nBetter handling of conflicting packages.\nMinor enhancements and improvements.\n\nFivetran Connector SDK\nConnector SDK connectors now support VPN tunnel as a connection option. A VPN tunnel provides a secure, encrypted site-to-site VPN connection between your network and Fivetran's network, enabling your connector code to access your source over a private network. You must have an Enterprise or Business Critical plan to use a VPN tunnel connection for Connector SDK.\n\nWe've enabled performance profiling for Connector SDK syncs. You can now analyze CPU usage and code execution time using flamegraphs generated via py-spy, available for production syncs (if supported) and local debugging.\n\nFor more information, including how to analyze flamegraphs, see our Performance Profiling documentation.\n\nfivetran-api-playground PyPI package\nWe have released version 1.1.4 of the fivetran-api-playground PyPI package. This release adds the following:\nUpgrades the flask library dependency to 3.1.3.\nUpgrades the faker library dependency to 40.4.0.\nUpgrades the colorama library dependency to 0.4.6.\n\n[Content truncated for length...]"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://docs.getdbt.com/docs/dbt-versions/dbt-cloud-release-notes",
+            "doc_title" : "February 2026",
+            "id" : "cs_d10f1617-3d7a-4f43-9f57-60cb52ba11f5",
+            "source_id" : 0,
+            "text" : "New: Advanced CI (dbt compare in orchestration) is now supported in the dbt Fusion engine. For more information, see Advanced CI.\n\nBeta: The dbt-salesforce adapter available in the dbt Fusion engine CLI is now in beta. For more information, see Salesforce Data 360 setup.\n\nEnhancement: The Analyst permission now has the project-level access to read repositories. See Project access for project permissions for more information.\n\nEnhancement: After a user accepts an email invite to access an SSO-protected dbt platform account, the UI now prompts them to log in with SSO to complete the process. This replaces the previous \"Joined successfully\" message, helping avoid confusion when users accept an invite but do not complete the SSO login flow.\n\nNew: Profiles let you define and manage connections, credentials, and attributes for deployment environments at the project level. dbt automatically creates profiles for existing projects and environments based on the current configurations, so you don't need to take any action. This is being rolled out in phases during the coming weeks.\n\nNew: Python UDFs are now supported and available in dbt Fusion engine when using Snowflake or BigQuery.\n\nEnhancement: Minor enhancements and UI updates to the Studio IDE, file explorer that replicate the VS Code IDE experience.\n\nEnhancement: Profile creation now displays specific validation error messages (such as \"Profile keys cannot contain spaces or special characters\") instead of generic error text, making it easier to identify and fix configuration issues.\n\nPrivate beta: Cost Insights shows estimated warehouse compute costs and run times for your dbt projects and models, directly in the dbt platform. It highlights cost reductions and efficiency gains from optimizations like state-aware orchestration across your project dashboard, model pages, and job details. See Set up Cost Insights and Explore cost data to learn more.\n\nNew: The dbt Semantic Layer now supports Omni as a partner integration. For more info, see Available integrations.\n\nEnhancement: We clarified documentation for cumulative log size limits on run endpoints, originally introduced in October 2025. When logs exceed the cumulative size limit, dbt omits them and displays a banner. No functional changes were made in February 2026. For more information, see Run visibility.\n\nNew: The immutable_where configuration is now supported for Snowflake dynamic tables. For more information, see Snowflake configurations.\n\nFix: The user invite details now show more information in invite status, giving admins visibility into users who accepted an invite to an SSO-protected account but haven't yet logged in via SSO. Previously, these invites were hidden, making it appear as if the user hadn't been invited. The Invites endpoints of the dbt platform Admin v2 API now include these additional statuses: 4 (PENDINGEMAIL_VERIFICATION) 5 (EMAIL_VERIFIED_SSO).\n\nEnhancement: Improved performance on Runs endpoint for Admin V2 API and run details in dbt platform when connecting with GCP."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://docs.getdbt.com/docs/dbt-versions/dbt-cloud-release-notes",
+            "doc_title" : "March 2026",
+            "id" : "cs_03d02320-fbee-424d-a1e0-ea7d4d406b55",
+            "source_id" : 0,
+            "text" : "Enhancement: The environment Connection profiles page has been updated. The profile name is now a clickable button that opens the view/edit drawer, the Connection column links to the connection details page in a new tab, and in edit mode a swap icon button lets you change the assigned profile. The previous ellipsis menu has been removed. For details, refer to About profiles.\n\nBeta: Apache Spark is now supported in the dbt Fusion engine CLI, enabling faster compilation and execution for Spark-based dbt projects. Fusion currently supports only Apache Spark 3.0. For more information, refer to Connect Apache Spark to Fusion.\n\nEnhancement: Cost Insights charts now include an Assets filter (Models/Tests/All) on the Cost, Usage, Query run time, and Builds tabs. Use the dropdown on each chart to filter the data you want to view; your selection is stored per tab. The former Model builds tab is now labeled Builds. For more information, see Explore cost data.\n\nEnhancement: Deferral now supports user-defined functions (UDFs). When you run a dbt command with --defer and --state, dbt resolves function() calls from the state manifest. This lets you run models that depend on UDFs without first building those UDFs in your current target.\n\nFix: Status messages that exceed the 1024 character limit are now automatically truncated to prevent validation errors and run timeouts. Previously, long status messages could cause runs to fail with unhandled exceptions or result in lost status information. The system now logs when truncation occurs to help identify and optimize verbose status messages.\n\nFix: Resolved an issue where retrying failed runs that were triggered from Git tags would use the wrong commit. Previously, when runs were triggered from Git tags instead of branches, the system would enter a detached HEAD state, causing retries to use the latest commit on HEAD rather than the original tagged commit. The fix now correctly preserves and uses the original Git tag reference when retrying runs, ensuring consistency between the initial run and any retries.\n\nNew: The dbt MCP server now includes product docs tools (search_product_docs and get_product_doc_pages) that let your AI assistant search and fetch pages from docs.getdbt.com in real time. Get responses grounded in the latest official dbt documentation rather than relying on training data or web searches, so you can stay in your development flow and trust the answers. This allows you to stay in your development flow and trust. These tools are enabled by default with no additional configuration. Restart your MCP server if you don't see the product docs tools in your MCP config. For more information, see the dbt MCP repo.\n\nEnhancement: The Model Timing tab displays an informative banner for dbt Fusion engine runs instead of the timing chart. The banner explains \"Model timing is not yet available for Fusion runs\" and provides context about threading differences. Non-Fusion runs continue to show the timing chart normally.\n\nBehavior change: Snowflake plans to increase the default column size for string and binary data types in May 2026. dbt-snowflake versions below v1.10.6 may fail to build certain incremental models when this change is deployed. Assess impact and take any required actions.\n\nNew: The new Semantic Layer YAML specification is now available on the dbt platform Latest release track. For an overview of the changes and steps how to migrate to the latest YAML spec, see Migrate to the latest YAML spec.\n\nBehavior change: New projects in trial, starter, or Enterprise accounts now default to Fusion Latest for all new environments with a supported adapter (Redshift, Snowflake, BigQuery, and Databricks). You can revert to another version by changing the dbt version in your environment settings."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://docs.getdbt.com/docs/dbt-versions/dbt-cloud-release-notes",
+            "doc_title" : "January 2026",
+            "id" : "cs_82b313b5-95e7-4c9c-add7-c76625bbb4d4",
+            "source_id" : 0,
+            "text" : "Enhancement: The defer-env-id setting for choosing which deployment environment to defer to is now available in the Studio IDE. Previously, this configuration only worked for the dbt CLI\n\nBeta: The Analyst agent in dbt Insights is now in beta. dbt Copilot's AI assistant in Insights now uses a dropdown menu to select between Agent and Generate SQL, replacing the previous tab interface.\n\nEnhancement: The Studio IDE now includes search and replace functionality and a command palette, enabling you to quickly find and replace text across your project, navigate files, jump to symbols, and run IDE configuration commands. This feature is being rolled out in phases and will become available to all dbt platform accounts by mid-February.\n\nEnhancement: State-aware orchestration improvements: When a model fails a data test, state-aware orchestration rebuilds it on subsequent runs instead of reusing it from prior state to ensure dbt reevaluates data quality issues. State-aware orchestration now detects and rebuilds models whose tables are deleted from the warehouse, even when there are no code or data changes. Previously, tables deleted externally were not detected, and therefore not rebuilt, unless code or data had changed. For more information, see Handling deleted tables. State-aware orchestration is in private preview. See the prerequisites for using the feature.\n\nEnhancement: dbt Copilot correctly detects column names across various schema.yml files, adds only missing descriptions, and preserves existing ones.\n\nEnhancement: The Fusion CLI now automatically reads environment variables from a .env file in your current working directory (the folder you cd into and run dbt commands from in your terminal), if one exists. This provides a simple way to manage credentials and configuration without hardcoding them in your profiles.yml. The dbt VS Code extension also supports .env files as well as LSP-powered features. For more information, refer to Install Fusion CLI.\n\nNew: The new Semantic Layer YAML specification creates an open standard for defining metrics and dimensions that works across multiple platforms. The new spec is now live in the dbt Fusion engine. Key changes: Semantic models are now embedded within model YAML entries. This removes the need to manage YAML entries across multiple files. Measures are now simple metrics. Frequently used options are now top-level keys, reducing YAML nesting depth. For an overview of the changes and steps how to migrate to the latest YAML spec, see Migrate to the latest YAML spec.\n\nFix: Debug logs in the Run summary tab are now properly truncated to improve performance and user interface responsiveness. Previously, debug logs were not truncated correctly, causing slower page loads. You can access the full debug logs by clicking Download > Download all debug logs. For more information, see Run visibility.\n\nNew: The Semantic Layer querying within dbt Insights is now generally available (GA), enabling you to build SQL queries against the Semantic Layer without writing SQL code.\n\nEnhancement: Eligible dbt platform accounts in the Fusion private preview can now use Exposures."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2025.1",
+            "id" : "cs_abb3af9f-a5b1-4694-aa37-68416a4ec4f4",
+            "source_id" : 0,
+            "text" : "Tableau 2025.1 offers new ways to enhance your analytics with AI-powered solutions and provides early access to experience future releases. Highlights include Tableau Agent Multilingual Support, Private Connect for Tableau Cloud, Tableau Cloud Release Preview Sites and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://docs.snowflake.com/en/release-notes/new-features",
+            "doc_title" : "Mar 24, 2026",
+            "id" : "cs_baa22655-2d78-4ae4-b827-947b4a34b6f7",
+            "source_id" : 0,
+            "text" : "Mar 24, 2026: ARRAY_REPEAT function\nMar 24, 2026: MAP_ENTRIES function"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2025.2",
+            "id" : "cs_784c7033-8338-4cfe-9929-e3621c4a4613",
+            "source_id" : 0,
+            "text" : "Tableau 2025.2 has new capabilities to help you deliver trusted insights with agentic analytics and embed vizzes and metrics where you need them. Highlights include Concierge, Semantic Learning, Tableau App for Google Workspace, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2026.1",
+            "id" : "cs_31a2073f-bc31-40f0-a01c-7a9ea1b5cca6",
+            "source_id" : 0,
+            "text" : "Tableau 2026.1 has new end-to-end capabilities to build, test, and share your insights. Highlights include Auto-Generate Semantic Models from Workspaces, Q&A Calibration, Enhanced Q&A Updates, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2025.3",
+            "id" : "cs_91ad7b86-ae27-4823-b2ee-4a6248c1efc5",
+            "source_id" : 0,
+            "text" : "Tableau 2025.3 offers new capabilities to help you unlock AI-powered analytics where you work. Highlights include Q&A Calibration, Tableau Agent in Tableau Server, Dashboard Narratives and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://docs.snowflake.com/en/release-notes/new-features",
+            "doc_title" : "Mar 20, 2026",
+            "id" : "cs_25f697fc-5358-4cb6-a785-655592042c22",
+            "source_id" : 0,
+            "text" : "Mar 20, 2026: Block public access to internal stages with IP allowlist exceptions (General availability)\nMar 20, 2026: DCM Projects (Preview)\nMar 20, 2026: Apache Iceberg™ tables: Support for the Azure Data Lake Storage Gen2 with external volumes (Preview)"
+          } ],
+          "search_results_persist" : { }
+        },
+        "type" : "json"
+      } ],
+      "name" : "KnowledgeSearch",
+      "status" : "success",
+      "tool_use_id" : "toolu_bdrk_01Y3hbLkxGXp8jcnNKGryYPx",
+      "type" : "cortex_search"
+    },
+    "type" : "tool_result"
+  }, {
+    "thinking" : {
+      "text" : "\nI have enough information from the Fivetran March 2026 changelog to compile the bullet points. The content keeps getting truncated at the same point, but I have enough for 10 solid bullet points from what's available. Let me compile the key updates.\n\nFrom the Fivetran March 2026 changelog, here are the key updates:\n\n1. **Connector SDK now supports VPN tunnel** — secure, encrypted site-to-site VPN connection between your network and Fivetran's for private network access (Enterprise/Business Critical plans)\n2. **Performance profiling for Connector SDK syncs** — analyze CPU usage and code execution time using flamegraphs via py-spy for production syncs and local debugging\n3. **Connector SDK PyPI package v2.7.1** — improved logging for `fivetran debug` and `fivetran reset`, fixed vulnerabilities\n4. **Default Python version changed to 3.13** (SDK v2.7.0) — due to py-spy compatibility; can still use Python 3.14 via `--python-version`\n5. **New help command in SDK v2.6.2** — provides additional information about the package and its usage\n6. **Better error handling and conflicting package management** in SDK v2.6.2\n7. **API Playground PyPI package v1.1.4** — upgraded Flask to 3.1.3, Faker to 40.4.0, Colorama to 0.4.6\n\nThat gives me 7 distinct items. The content was truncated so there's likely more. Let me present what I have — these are meaningful and distinct enough for bullet points. I'll consolidate some to get concise points.\n"
+    },
+    "type" : "thinking"
+  }, {
+    "text" : "\n\nHere are the latest updates from the **Fivetran March 2026 changelog**:\n\n- **VPN tunnel support for Connector SDK** — connectors can now access sources over a secure, encrypted site-to-site VPN connection (Enterprise/Business Critical plans)\n- **Performance profiling for SDK syncs** — analyze CPU usage and execution time using flamegraphs generated via py-spy, available in production and local debugging\n- **Connector SDK v2.7.1 released** — improved logging for `fivetran debug` and `fivetran reset`, plus vulnerability fixes in the tester\n- **Default Python version updated to 3.13** — in SDK v2.7.0, aligning with py-spy compatibility (Python 3.14 still available via `--python-version` flag)\n- **New `help` command in SDK v2.6.2** — provides users with additional package information and usage guidance directly from the CLI\n- **Improved error handling and conflicting package management** in the Connector SDK PyPI package\n- **API Playground package v1.1.4 released** — upgraded core dependencies including Flask 3.1.3, Faker 40.4.0, and Colorama 0.4.6\n\n*Note: The available Fivetran release data in my knowledge base is limited to the March 2026 changelog, which yielded 7 distinct updates rather than 10.*\n\n",
+    "type" : "text"
+  } ],
+  "metadata" : {
+    "usage" : {
+      "tokens_consumed" : [ {
+        "context_window" : 200000,
+        "input_tokens" : {
+          "cache_read" : 108404,
+          "cache_write" : 46572,
+          "total" : 154985,
+          "uncached" : 9
+        },
+        "model_name" : "claude-opus-4-6",
+        "output_tokens" : {
+          "total" : 2284
+        }
+      } ]
+    }
+  },
+  "role" : "assistant",
+  "schema_version" : "v2",
+  "sequence_number" : 550,
+  "status" : "completed"
+}

@@ -1,0 +1,320 @@
+{
+  "content" : [ {
+    "thinking" : {
+      "text" : "\nThe user wants to know what's new in Snowflake. I should search the knowledge base for recent Snowflake release information.\n"
+    },
+    "type" : "thinking"
+  }, {
+    "tool_use" : {
+      "client_side_execute" : false,
+      "input" : {
+        "agentic_search" : false,
+        "columns" : [ "RELEASE_NAME", "URL" ],
+        "limit" : 15,
+        "query" : "new features Snowflake latest release"
+      },
+      "name" : "KnowledgeSearch",
+      "tool_use_id" : "toolu_bdrk_01GLtZNBjUxzA3SWVpb3YT9W",
+      "type" : "cortex_search"
+    },
+    "type" : "tool_use"
+  }, {
+    "tool_result" : {
+      "content" : [ {
+        "json" : {
+          "search_results" : [ {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "2"
+            },
+            "doc_id" : "https://docs.snowflake.com/en/release-notes/new-features",
+            "doc_title" : "10.9",
+            "id" : "cs_8d6392c3-e1f5-478b-9991-f925aa3bcf9c",
+            "source_id" : 0,
+            "text" : "10.9 Release Notes: Mar 17, 2026-Mar 20, 2026\nNew features\nSnowflake supports directory, root stage, and SnowGit imports\nSecurity updates\nTSS history account usage view (General availability)\nSQL updates\nDML error logging for tables\nAdditional date and time formats\nAdditional fixed-position numeric format models\nSnowflake Cortex updates\nCKE document access history\nRelease notes change log"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "2"
+            },
+            "doc_id" : "https://docs.getdbt.com/docs/dbt-versions/dbt-cloud-release-notes",
+            "doc_title" : "February 2026",
+            "id" : "cs_d2cf0e6d-f190-4d80-aec0-1f17f8c05c3c",
+            "source_id" : 0,
+            "text" : "New: Advanced CI (dbt compare in orchestration) is now supported in the dbt Fusion engine. For more information, see Advanced CI.\n\nBeta: The dbt-salesforce adapter available in the dbt Fusion engine CLI is now in beta. For more information, see Salesforce Data 360 setup.\n\nEnhancement: The Analyst permission now has the project-level access to read repositories. See Project access for project permissions for more information.\n\nEnhancement: After a user accepts an email invite to access an SSO-protected dbt platform account, the UI now prompts them to log in with SSO to complete the process. This replaces the previous \"Joined successfully\" message, helping avoid confusion when users accept an invite but do not complete the SSO login flow.\n\nNew: Profiles let you define and manage connections, credentials, and attributes for deployment environments at the project level. dbt automatically creates profiles for existing projects and environments based on the current configurations, so you don't need to take any action. This is being rolled out in phases during the coming weeks.\n\nNew: Python UDFs are now supported and available in dbt Fusion engine when using Snowflake or BigQuery.\n\nEnhancement: Minor enhancements and UI updates to the Studio IDE, file explorer that replicate the VS Code IDE experience.\n\nEnhancement: Profile creation now displays specific validation error messages (such as \"Profile keys cannot contain spaces or special characters\") instead of generic error text, making it easier to identify and fix configuration issues.\n\nPrivate beta: Cost Insights shows estimated warehouse compute costs and run times for your dbt projects and models, directly in the dbt platform. It highlights cost reductions and efficiency gains from optimizations like state-aware orchestration across your project dashboard, model pages, and job details. See Set up Cost Insights and Explore cost data to learn more.\n\nNew: The dbt Semantic Layer now supports Omni as a partner integration. For more info, see Available integrations.\n\nEnhancement: We clarified documentation for cumulative log size limits on run endpoints, originally introduced in October 2025. When logs exceed the cumulative size limit, dbt omits them and displays a banner. No functional changes were made in February 2026. For more information, see Run visibility.\n\nNew: The immutable_where configuration is now supported for Snowflake dynamic tables. For more information, see Snowflake configurations.\n\nFix: The user invite details now show more information in invite status, giving admins visibility into users who accepted an invite to an SSO-protected account but haven't yet logged in via SSO. Previously, these invites were hidden, making it appear as if the user hadn't been invited. The Invites endpoints of the dbt platform Admin v2 API now include these additional statuses: 4 (PENDINGEMAIL_VERIFICATION) 5 (EMAIL_VERIFIED_SSO).\n\nEnhancement: Improved performance on Runs endpoint for Admin V2 API and run details in dbt platform when connecting with GCP."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://docs.snowflake.com/en/release-notes/new-features",
+            "doc_title" : "10.10",
+            "id" : "cs_155dcffc-7362-4483-a259-3a7458261ba1",
+            "source_id" : 0,
+            "text" : "10.10 Release Notes: Mar 22, 2026-Mar 25, 2026\nSQL updates\nInterval data types (Preview)\nSnowflake Cortex updates\nBatch Cortex Search (Preview)\nRelease notes change log"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://learn.microsoft.com/en-us/power-bi/fundamentals/whats-new",
+            "doc_title" : "March 2026",
+            "id" : "cs_9dec072a-92c9-46cc-814d-c6c9b8520c48",
+            "source_id" : 0,
+            "text" : "Power BI's March 2026 update delivers powerful enhancements across reporting, AI, modeling, and visuals. Translytical task flows move to general availability, enabling end users to take action directly from reports. Modern visual defaults (preview) bring a fresh Fluent 2 design to your reports. Direct Lake in OneLake reaches general availability, unlocking incredible performance directly against OneLake. Plus, custom totals, series label leader lines, updated Copilot experiences, and expanded DAX capabilities make this a feature-packed release.\n\nGeneral:\n- Upcoming deprecation of old file picker experience in Power BI Desktop\n\nCopilot and AI:\n- Copilot pane user experience update\n- Copilot feedback update\n\nReporting:\n- Translytical task flows (Generally Available)\n- Modern visual defaults and customizing theme improvements (Preview)\n- Custom totals (Preview)\n- Series label leader lines for line charts\n- Report Theme Updates\n- Input slicer now supports conditional formatting\n\nModeling:\n- Direct Lake in OneLake (Generally Available)\n- TMDL View in web modeling (Preview)\n- DAX user-defined functions (Preview)\n\nData connectivity:\n- IBM Netezza ODBC Driver (Generally Available)\n- QuickBooks Online Connector Retirement\n\nVisualizations:\n- AI Narrative auto refresh"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau November 2025",
+            "id" : "cs_6436bac4-7b50-45e8-b434-49abc82e5d67",
+            "source_id" : 0,
+            "text" : "Tableau November 2025 Release has new capabilities to help you uncover data-driven insights faster. Highlights include MCP Server, Published Data Sources, External Embedding, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://docs.snowflake.com/en/release-notes/new-features",
+            "doc_title" : "10.8",
+            "id" : "cs_fe80873b-59ca-4da1-a764-b4b39e471045",
+            "source_id" : 0,
+            "text" : "10.8 Release Notes: Mar 08, 2026-Mar 12, 2026\nSQL updates\nUser-defined types\nData collaboration updates\nBusiness Continuity and Disaster Recovery (BCDR) for listings\nRelease notes change log"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau August 2025",
+            "id" : "cs_4aabacf3-edd1-49d0-9bcc-187122ae52fb",
+            "source_id" : 0,
+            "text" : "Tableau August 2025 Release has new capabilities to help you get to insights faster. Highlights include Data Pro, Tableau Next and Slack, Viz Enhancements, Threshold Alerts, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau September 2025",
+            "id" : "cs_63cd7004-6559-42f8-a8cf-1e69d657e935",
+            "source_id" : 0,
+            "text" : "Tableau September 2025 Release has new capabilities to help you dig deeper into your metrics. Highlights include New Enhanced Q&A Updates, Correlated Metrics, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau October 2025",
+            "id" : "cs_f076a311-3d5f-4cfe-ae37-01ece9385916",
+            "source_id" : 0,
+            "text" : "Tableau October 2025 Release has new capabilities to help you make smarter decisions. Highlights include Inspector, Tableau Next Slack Enhancements, Visualizations and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2024.2",
+            "id" : "cs_16035cf2-c665-4bff-8208-6dc57d3b916d",
+            "source_id" : 0,
+            "text" : "Tableau 2024.2 has new capabilities that help you create with data in new ways and explore data with an AI assistant in Tableau. Highlights include Tableau Agent, Tableau Pulse enhancements, Multi-Fact Relationships, Viz Extensions, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2023.2",
+            "id" : "cs_6c7951fa-f127-4e99-a4fd-d8623843defc",
+            "source_id" : 0,
+            "text" : "Tableau 2023.2 has new capabilities that help you analyze your data more effectively and efficiently. Highlights include unified tooltips, a new Data Cloud connector, multi-row calculations in Tableau Prep, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2024.1",
+            "id" : "cs_20497217-19d5-424e-8b50-f1fd63f593f7",
+            "source_id" : 0,
+            "text" : "Tableau 2024.1 has new capabilities that help you drive better and faster decision-making with trusted generative AI. Highlights include Tableau Pulse, Amazon Marketplace availability, Viz Navigation for Text Table, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2024.3",
+            "id" : "cs_6a88fcbf-5c68-4770-bd37-607806544567",
+            "source_id" : 0,
+            "text" : "Tableau 2024.3 offers new ways to visualize your data and makes it easier for organizations to administer analytics at scale. Highlights include Tableau Cloud Manager, Table Viz Extension, Spatial Parameters, Tableau Cloud App for Microsoft Teams, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2025.1",
+            "id" : "cs_c92f04ac-44b5-4f18-be79-a375e2e6a6cb",
+            "source_id" : 0,
+            "text" : "Tableau 2025.1 offers new ways to enhance your analytics with AI-powered solutions and provides early access to experience future releases. Highlights include Tableau Agent Multilingual Support, Private Connect for Tableau Cloud, Tableau Cloud Release Preview Sites and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "0"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2025.2",
+            "id" : "cs_747a0325-53b6-423f-b193-74a5908cc42a",
+            "source_id" : 0,
+            "text" : "Tableau 2025.2 has new capabilities to help you deliver trusted insights with agentic analytics and embed vizzes and metrics where you need them. Highlights include Concierge, Semantic Learning, Tableau App for Google Workspace, and more."
+          } ],
+          "search_results_persist" : { }
+        },
+        "type" : "json"
+      } ],
+      "name" : "KnowledgeSearch",
+      "status" : "success",
+      "tool_use_id" : "toolu_bdrk_01GLtZNBjUxzA3SWVpb3YT9W",
+      "type" : "cortex_search"
+    },
+    "type" : "tool_result"
+  }, {
+    "tool_use" : {
+      "client_side_execute" : false,
+      "input" : {
+        "agentic_search" : false,
+        "columns" : [ "RELEASE_NAME", "URL" ],
+        "limit" : 10,
+        "query" : "Snowflake release notes 2026 new features updates"
+      },
+      "name" : "KnowledgeSearch",
+      "tool_use_id" : "toolu_bdrk_01AKcctbHS9dX9EMNoZLHzXc",
+      "type" : "cortex_search"
+    },
+    "type" : "tool_use"
+  }, {
+    "tool_result" : {
+      "content" : [ {
+        "json" : {
+          "search_results" : [ {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "3"
+            },
+            "doc_id" : "https://docs.snowflake.com/en/release-notes/new-features",
+            "doc_title" : "10.9",
+            "id" : "cs_8fbdd428-4d5e-4426-bb7a-b771d27f2a33",
+            "source_id" : 0,
+            "text" : "10.9 Release Notes: Mar 17, 2026-Mar 20, 2026\nNew features\nSnowflake supports directory, root stage, and SnowGit imports\nSecurity updates\nTSS history account usage view (General availability)\nSQL updates\nDML error logging for tables\nAdditional date and time formats\nAdditional fixed-position numeric format models\nSnowflake Cortex updates\nCKE document access history\nRelease notes change log"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "3"
+            },
+            "doc_id" : "https://docs.snowflake.com/en/release-notes/new-features",
+            "doc_title" : "10.10",
+            "id" : "cs_ebdf949f-f585-4138-ace4-da74e170e12d",
+            "source_id" : 0,
+            "text" : "10.10 Release Notes: Mar 22, 2026-Mar 25, 2026\nSQL updates\nInterval data types (Preview)\nSnowflake Cortex updates\nBatch Cortex Search (Preview)\nRelease notes change log"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "2"
+            },
+            "doc_id" : "https://docs.getdbt.com/docs/dbt-versions/dbt-cloud-release-notes",
+            "doc_title" : "February 2026",
+            "id" : "cs_13671226-57c5-448b-9688-7ada99df7d20",
+            "source_id" : 0,
+            "text" : "New: Advanced CI (dbt compare in orchestration) is now supported in the dbt Fusion engine. For more information, see Advanced CI.\n\nBeta: The dbt-salesforce adapter available in the dbt Fusion engine CLI is now in beta. For more information, see Salesforce Data 360 setup.\n\nEnhancement: The Analyst permission now has the project-level access to read repositories. See Project access for project permissions for more information.\n\nEnhancement: After a user accepts an email invite to access an SSO-protected dbt platform account, the UI now prompts them to log in with SSO to complete the process. This replaces the previous \"Joined successfully\" message, helping avoid confusion when users accept an invite but do not complete the SSO login flow.\n\nNew: Profiles let you define and manage connections, credentials, and attributes for deployment environments at the project level. dbt automatically creates profiles for existing projects and environments based on the current configurations, so you don't need to take any action. This is being rolled out in phases during the coming weeks.\n\nNew: Python UDFs are now supported and available in dbt Fusion engine when using Snowflake or BigQuery.\n\nEnhancement: Minor enhancements and UI updates to the Studio IDE, file explorer that replicate the VS Code IDE experience.\n\nEnhancement: Profile creation now displays specific validation error messages (such as \"Profile keys cannot contain spaces or special characters\") instead of generic error text, making it easier to identify and fix configuration issues.\n\nPrivate beta: Cost Insights shows estimated warehouse compute costs and run times for your dbt projects and models, directly in the dbt platform. It highlights cost reductions and efficiency gains from optimizations like state-aware orchestration across your project dashboard, model pages, and job details. See Set up Cost Insights and Explore cost data to learn more.\n\nNew: The dbt Semantic Layer now supports Omni as a partner integration. For more info, see Available integrations.\n\nEnhancement: We clarified documentation for cumulative log size limits on run endpoints, originally introduced in October 2025. When logs exceed the cumulative size limit, dbt omits them and displays a banner. No functional changes were made in February 2026. For more information, see Run visibility.\n\nNew: The immutable_where configuration is now supported for Snowflake dynamic tables. For more information, see Snowflake configurations.\n\nFix: The user invite details now show more information in invite status, giving admins visibility into users who accepted an invite to an SSO-protected account but haven't yet logged in via SSO. Previously, these invites were hidden, making it appear as if the user hadn't been invited. The Invites endpoints of the dbt platform Admin v2 API now include these additional statuses: 4 (PENDINGEMAIL_VERIFICATION) 5 (EMAIL_VERIFIED_SSO).\n\nEnhancement: Improved performance on Runs endpoint for Admin V2 API and run details in dbt platform when connecting with GCP."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "2"
+            },
+            "doc_id" : "https://docs.snowflake.com/en/release-notes/new-features",
+            "doc_title" : "10.8",
+            "id" : "cs_418581ad-9c69-452c-bb96-3873a76ce644",
+            "source_id" : 0,
+            "text" : "10.8 Release Notes: Mar 08, 2026-Mar 12, 2026\nSQL updates\nUser-defined types\nData collaboration updates\nBusiness Continuity and Disaster Recovery (BCDR) for listings\nRelease notes change log"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://learn.microsoft.com/en-us/power-bi/fundamentals/whats-new",
+            "doc_title" : "March 2026",
+            "id" : "cs_94130660-6909-4d00-a8ec-36440bcab251",
+            "source_id" : 0,
+            "text" : "Power BI's March 2026 update delivers powerful enhancements across reporting, AI, modeling, and visuals. Translytical task flows move to general availability, enabling end users to take action directly from reports. Modern visual defaults (preview) bring a fresh Fluent 2 design to your reports. Direct Lake in OneLake reaches general availability, unlocking incredible performance directly against OneLake. Plus, custom totals, series label leader lines, updated Copilot experiences, and expanded DAX capabilities make this a feature-packed release.\n\nGeneral:\n- Upcoming deprecation of old file picker experience in Power BI Desktop\n\nCopilot and AI:\n- Copilot pane user experience update\n- Copilot feedback update\n\nReporting:\n- Translytical task flows (Generally Available)\n- Modern visual defaults and customizing theme improvements (Preview)\n- Custom totals (Preview)\n- Series label leader lines for line charts\n- Report Theme Updates\n- Input slicer now supports conditional formatting\n\nModeling:\n- Direct Lake in OneLake (Generally Available)\n- TMDL View in web modeling (Preview)\n- DAX user-defined functions (Preview)\n\nData connectivity:\n- IBM Netezza ODBC Driver (Generally Available)\n- QuickBooks Online Connector Retirement\n\nVisualizations:\n- AI Narrative auto refresh"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://docs.snowflake.com/en/release-notes/new-features",
+            "doc_title" : "Mar 20, 2026",
+            "id" : "cs_ff26b576-649b-4541-b922-4edf0b4c0955",
+            "source_id" : 0,
+            "text" : "Mar 20, 2026: Block public access to internal stages with IP allowlist exceptions (General availability)\nMar 20, 2026: DCM Projects (Preview)\nMar 20, 2026: Apache Iceberg™ tables: Support for the Azure Data Lake Storage Gen2 with external volumes (Preview)"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://docs.snowflake.com/en/release-notes/new-features",
+            "doc_title" : "March 19, 2026",
+            "id" : "cs_2ee7eebd-abc9-4d87-aa92-8c5b380a8345",
+            "source_id" : 0,
+            "text" : "March 19, 2026: MIN_BY and MAX_BY functions are supported with dynamic table incremental refresh (General availability)"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau March 2026",
+            "id" : "cs_95fd1882-a5ac-4be4-990b-eccb3b3f97b7",
+            "source_id" : 0,
+            "text" : "Tableau March 2026 offers new capabilities to access smarter insights. Highlights include Rule-Based Semantic Model Authoring, Viz Enhancements, Enhanced Q&A Improvements, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://docs.snowflake.com/en/release-notes/new-features",
+            "doc_title" : "Mar 26, 2026",
+            "id" : "cs_1e8d6aca-5ec0-4ecf-9f53-52d9eb4ca409",
+            "source_id" : 0,
+            "text" : "Mar 26, 2026: New SCHEDULER attribute for dynamic tables — General availability"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau January 2026",
+            "id" : "cs_58c864d2-c2df-42a6-80e3-e0d159309e20",
+            "source_id" : 0,
+            "text" : "Tableau January 2026 offers new capabilities to track and access your data. Highlights include Pace to Goal Insight, Mark Favorite Metrics, and more."
+          } ],
+          "search_results_persist" : { }
+        },
+        "type" : "json"
+      } ],
+      "name" : "KnowledgeSearch",
+      "status" : "success",
+      "tool_use_id" : "toolu_bdrk_01AKcctbHS9dX9EMNoZLHzXc",
+      "type" : "cortex_search"
+    },
+    "type" : "tool_result"
+  }, {
+    "thinking" : {
+      "text" : "\nNow I have a good picture of recent Snowflake releases. Let me compile the key new features from the latest Snowflake releases (10.8, 10.9, 10.10 and individual feature announcements).\n"
+    },
+    "type" : "thinking"
+  }, {
+    "text" : "\n\nHere are the latest highlights from Snowflake's recent releases:\n\n- **Batch Cortex Search (Preview)** — Enables batch-mode semantic search over your data \n- **Interval data types (Preview)** — New SQL interval data types for more flexible date/time arithmetic \n- **Directory, root stage, and SnowGit imports** — Snowflake now supports importing from directories, root stages, and SnowGit repositories \n- **DML error logging for tables** — Capture and log errors from DML operations directly on tables \n- **User-defined types** — SQL support for creating custom user-defined types \n- **BCDR for listings** — Business Continuity and Disaster Recovery support for Marketplace listings \n- **TSS history account usage view (GA)** — Trust & Security Summary history view is now generally available \n- **Apache Iceberg™ tables on Azure ADLS Gen2 (Preview)** — External volume support for Iceberg tables on Azure Data Lake Storage Gen2 \n- **New SCHEDULER attribute for dynamic tables (GA)** — A new scheduler attribute to control dynamic table refresh behavior \n- **MIN_BY / MAX_BY with dynamic table incremental refresh (GA)** — These aggregate functions now work with incremental refresh on dynamic tables \n\n",
+    "type" : "text"
+  } ],
+  "metadata" : {
+    "usage" : {
+      "tokens_consumed" : [ {
+        "context_window" : 200000,
+        "input_tokens" : {
+          "cache_read" : 0,
+          "cache_write" : 37472,
+          "total" : 37477,
+          "uncached" : 5
+        },
+        "model_name" : "claude-opus-4-6",
+        "output_tokens" : {
+          "total" : 772
+        }
+      } ]
+    }
+  },
+  "role" : "assistant",
+  "schema_version" : "v2",
+  "sequence_number" : 154,
+  "status" : "completed"
+}

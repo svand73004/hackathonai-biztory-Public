@@ -19,22 +19,22 @@ function App() {
         }}
       />
 
-      {/* Header - Purple Gradient */}
-      <header className="sticky top-0 z-50 bg-gradient-to-r from-purple-800 via-purple-700 to-indigo-900 p-4 shadow-xl backdrop-blur-md bg-opacity-95">
+      {/* Header - Fixed Purple Gradient */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-purple-800 via-purple-700 to-indigo-900 p-4 shadow-xl backdrop-blur-md bg-opacity-95">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center gap-4">
-            <img src={biztoryLogo} alt="Biztory Logo" className="h-12 w-auto object-contain brightness-0 invert" />
-            <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-white hidden sm:block">What's New</h1>
+            <img src={biztoryLogo} alt="Biztory Logo" className="h-10 md:h-12 w-auto object-contain brightness-0 invert" />
+            <h1 className="text-xl md:text-3xl font-bold tracking-tight text-white hidden sm:block">What's New</h1>
           </div>
           <nav>
-            <ul className="flex space-x-6 font-medium">
+            <ul className="flex space-x-4 md:space-x-6 font-medium">
               <li>
-                <a href="#chatbot" className="text-purple-100 hover:text-white transition duration-300 px-3 py-2 rounded-md hover:bg-white/10">
+                <a href="#chatbot" className="text-purple-100 hover:text-white transition duration-300 px-3 py-2 rounded-md hover:bg-white/10 text-sm md:text-base">
                   Chatbot
                 </a>
               </li>
               <li>
-                <a href="#tools" className="text-purple-100 hover:text-white transition duration-300 px-3 py-2 rounded-md hover:bg-white/10">
+                <a href="#tools" className="text-purple-100 hover:text-white transition duration-300 px-3 py-2 rounded-md hover:bg-white/10 text-sm md:text-base">
                   Tools
                 </a>
               </li>
@@ -44,7 +44,7 @@ function App() {
       </header>
 
       {/* Main content */}
-      <main className="container mx-auto p-6 space-y-16 relative z-10">
+      <main className="container mx-auto p-6 pt-28 md:pt-32 space-y-16 relative z-10">
         {/* Chatbot Section */}
         <section id="chatbot" className="bg-gray-100 rounded-3xl shadow-xl p-8 border border-gray-200">
           <div className="flex flex-col md:flex-row md:items-center gap-3 mb-8">
@@ -66,7 +66,7 @@ function App() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-50 p-12 text-center border-t border-gray-200 relative z-10">
+      <footer className="bg-gray-50 p-12 text-center border-t border-gray-200 relative z-10 mt-16">
         <div className="container mx-auto">
           <img src={biztoryLogo} alt="Biztory Logo" className="h-10 w-auto mx-auto mb-6 opacity-60 grayscale hover:grayscale-0 transition duration-300" />
           <p className="text-gray-500 text-sm tracking-wide">

@@ -9,27 +9,67 @@ const toolsData = [
   {
     name: 'Snowflake',
     logo: snowflakeLogo,
-    description: `Snowflake continues to innovate with new features like Snowpark Container Services, allowing you to deploy and run containerized workloads directly within Snowflake. This brings advanced capabilities for ML, AI, and custom applications closer to your data, reducing data movement and improving security. Expect enhanced performance optimizations and expanded governance features across the Data Cloud.`,
+    points: [
+      "Native support for directory, root stage, and SnowGit imports (March 2026).",
+      "Introduction of Interval data types in SQL updates (Preview, March 2026).",
+      "New Batch Cortex Search capabilities for Snowflake Cortex (Preview, March 2026).",
+      "Enhanced DML error logging for tables to improve debugging.",
+      "General availability of the TSS history account usage view.",
+      "Support for additional fixed-position numeric format models in SQL.",
+      "Advanced natural language to SQL conversion via Cortex Analyst."
+    ],
   },
   {
     name: 'Tableau',
     logo: tableauLogo,
-    description: `Tableau's latest updates focus on augmented analytics and natural language interaction. Ask questions using plain language and let Tableau GPT generate insights and dashboards for you. Deeper integration with Salesforce Data Cloud and improved connectivity to various data sources streamline data preparation and visualization workflows. New collaboration tools also foster better teamwork on dashboards and reports.`,
+    points: [
+      "Rule-Based Semantic Model Authoring for smarter insights (March 2026).",
+      "Auto-Generate Semantic Models directly from Workspaces (Tableau 2026.1).",
+      "Tableau Concierge agentic analytics assistant (Tableau 2025.2).",
+      "Enhanced learning capabilities for automated data understanding.",
+      "Tableau App for Google Workspace integration.",
+      "New tools for Q&A Calibration to test and share insights.",
+      "AI-powered automated summaries with Dashboard Narratives."
+    ],
   },
   {
     name: 'dbt',
     logo: dbtLogo,
-    description: `dbt (data build tool) is evolving with native support for Python models and a stronger emphasis on semantic layer capabilities. This allows data teams to define key business metrics once and reuse them across various downstream tools. Performance improvements for large-scale transformations and enhanced testing frameworks ensure more robust and reliable data pipelines.`,
+    points: [
+      "dbt Fusion Engine: Advanced CI (dbt compare) and performance gains (March 2026).",
+      "Native support for Python User-Defined Functions (UDFs) with Snowflake.",
+      "Cost Insights: Private beta showing warehouse compute costs and run times.",
+      "dbt MCP Server: Search and fetch official documentation in real time.",
+      "New Semantic Layer YAML specification for multi-platform metrics.",
+      "Beta support for Apache Spark 3.0 in the dbt Fusion engine CLI.",
+      "Automatic truncation of long status messages to prevent validation errors."
+    ],
   },
   {
     name: 'DuckDB',
     logo: duckdbLogo,
-    description: `DuckDB, the in-process SQL OLAP database, is gaining traction with significant performance boosts and expanded ecosystem integrations. New connectors for popular data formats and cloud storage make it even easier to perform analytical queries directly on your data files without needing a separate server. Its lightweight nature makes it ideal for embedded analytics and local data exploration.`,
+    points: [
+      "High-speed analytical queries in-browser via WebAssembly (WASM).",
+      "Query Parquet and CSV files directly from S3 and cloud storage.",
+      "High-performance analytical engine in a single, zero-dependency binary.",
+      "Significant performance boosts and expanded ecosystem integrations.",
+      "Comprehensive coverage for advanced window functions and complex joins.",
+      "Lightweight architecture ideal for local data exploration and embedded apps.",
+      "Deeply integrated with Python and R for seamless data workflows."
+    ],
   },
   {
     name: 'Fivetran',
     logo: fivetranLogo,
-    description: `Fivetran is expanding its connector library and enhancing its data governance features. New connectors for niche applications and improved data lineage capabilities provide greater visibility and control over your data pipelines. Automated data recovery and anomaly detection features ensure higher data quality and reliability, reducing the need for manual intervention.`,
+    points: [
+      "Support for secure, encrypted VPN tunnel connections between networks.",
+      "Analyze CPU usage and execution time using flamegraphs for SDK syncs.",
+      "Connector SDK v2.7.1: Improved logging and critical vulnerability fixes.",
+      "SDK v2.7.0 defaults to Python 3.13 for performance profiling compatibility.",
+      "API Playground v1.1.4: Upgraded core dependencies like Flask and Faker.",
+      "New SDK help command for additional package information and usage.",
+      "Managed dbt Core for automated transformations within the Fivetran UI."
+    ],
   },
 ];
 
@@ -39,7 +79,7 @@ const ToolSection = () => {
       {toolsData.map((tool, index) => (
         <div
           key={tool.name}
-          className={`relative overflow-hidden group min-h-[300px] flex flex-col justify-center p-10 rounded-3xl transition-all duration-500 ease-in-out border border-gray-200 shadow-xl
+          className={`relative overflow-hidden group min-h-[400px] flex flex-col justify-center p-8 md:p-12 rounded-3xl transition-all duration-500 ease-in-out border border-gray-200 shadow-xl
             ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}
           `}
         >
@@ -52,19 +92,26 @@ const ToolSection = () => {
             <img 
               src={tool.logo} 
               alt="" 
-              className="w-80 h-80 md:w-[500px] md:h-[500px] object-contain grayscale-0"
+              className="w-80 h-80 md:w-[450px] md:h-[450px] object-contain"
             />
           </div>
 
           {/* Content */}
-          <div className={`relative z-10 max-w-2xl ${index % 2 === 0 ? 'mr-auto text-left' : 'ml-auto text-right'}`}>
+          <div className={`relative z-10 max-w-2xl w-full ${index % 2 === 0 ? 'mr-auto text-left' : 'ml-auto text-right'}`}>
             <div className={`flex items-center gap-4 mb-6 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
               <h3 className="text-4xl font-black text-purple-900 tracking-tight">{tool.name}</h3>
               <div className="h-1.5 w-16 bg-purple-600 rounded-full" />
             </div>
-            <p className="text-lg text-gray-700 leading-relaxed font-semibold drop-shadow-sm">
-              {tool.description}
-            </p>
+
+            <ul className={`space-y-3 ${index % 2 === 0 ? 'text-left' : 'text-right list-inside'}`}>
+              {tool.points.map((point, i) => (
+                <li key={i} className="text-lg font-semibold text-gray-700 flex items-start gap-2">
+                  <span className={`mt-2 h-2 w-2 rounded-full bg-purple-500 flex-shrink-0 ${index % 2 !== 0 ? 'hidden' : ''}`}></span>
+                  <span className={index % 2 !== 0 ? 'w-full' : ''}>{point}</span>
+                  <span className={`mt-2 h-2 w-2 rounded-full bg-purple-500 flex-shrink-0 ${index % 2 === 0 ? 'hidden' : ''}`}></span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       ))}

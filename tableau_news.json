@@ -1,0 +1,320 @@
+{
+  "content" : [ {
+    "thinking" : {
+      "text" : "\nThe user is asking about what's new in Tableau. I should search for recent Tableau release information using the KnowledgeSearch tool, which contains release notes and feature announcements across various platforms including Tableau.\n"
+    },
+    "type" : "thinking"
+  }, {
+    "tool_use" : {
+      "client_side_execute" : false,
+      "input" : {
+        "agentic_search" : false,
+        "columns" : [ "RELEASE_NAME", "URL" ],
+        "limit" : 15,
+        "query" : "What is new in Tableau latest features updates"
+      },
+      "name" : "KnowledgeSearch",
+      "tool_use_id" : "toolu_bdrk_011DVk8Y78YUFFoBpkEVLpV2",
+      "type" : "cortex_search"
+    },
+    "type" : "tool_use"
+  }, {
+    "tool_result" : {
+      "content" : [ {
+        "json" : {
+          "search_results" : [ {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "2"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2026.1",
+            "id" : "cs_bde1270a-cc60-40f8-92e4-9768000f5368",
+            "source_id" : 0,
+            "text" : "Tableau 2026.1 has new end-to-end capabilities to build, test, and share your insights. Highlights include Auto-Generate Semantic Models from Workspaces, Q&A Calibration, Enhanced Q&A Updates, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "2"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau September 2025",
+            "id" : "cs_05928fa5-5901-412c-8d1e-665684c7f3ad",
+            "source_id" : 0,
+            "text" : "Tableau September 2025 Release has new capabilities to help you dig deeper into your metrics. Highlights include New Enhanced Q&A Updates, Correlated Metrics, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "2"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2023.2",
+            "id" : "cs_0ac30c45-a189-4c2b-ba4c-c5b4b5a23bb5",
+            "source_id" : 0,
+            "text" : "Tableau 2023.2 has new capabilities that help you analyze your data more effectively and efficiently. Highlights include unified tooltips, a new Data Cloud connector, multi-row calculations in Tableau Prep, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "2"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2024.1",
+            "id" : "cs_65daf8ce-81f8-47c1-883a-120d09d418f4",
+            "source_id" : 0,
+            "text" : "Tableau 2024.1 has new capabilities that help you drive better and faster decision-making with trusted generative AI. Highlights include Tableau Pulse, Amazon Marketplace availability, Viz Navigation for Text Table, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "2"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau March 2026",
+            "id" : "cs_f7bbfff7-0ed0-4281-b99c-609f62b9b2d3",
+            "source_id" : 0,
+            "text" : "Tableau March 2026 offers new capabilities to access smarter insights. Highlights include Rule-Based Semantic Model Authoring, Viz Enhancements, Enhanced Q&A Improvements, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "2"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2024.2",
+            "id" : "cs_f349c2be-bbe7-4048-8913-a97634807a7a",
+            "source_id" : 0,
+            "text" : "Tableau 2024.2 has new capabilities that help you create with data in new ways and explore data with an AI assistant in Tableau. Highlights include Tableau Agent, Tableau Pulse enhancements, Multi-Fact Relationships, Viz Extensions, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "2"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2023.3",
+            "id" : "cs_d9536fda-ee84-46ab-a82d-521585f93d1e",
+            "source_id" : 0,
+            "text" : "Tableau 2023.3 has new capabilities that help you see, understand, and act on your data. Highlights include dynamic axis ranges, the Embedding Playground, the native Lightning Web Component for Tableau, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "2"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau August 2025",
+            "id" : "cs_82ee4dbc-f6df-4fcc-b9f5-833672cd54f6",
+            "source_id" : 0,
+            "text" : "Tableau August 2025 Release has new capabilities to help you get to insights faster. Highlights include Data Pro, Tableau Next and Slack, Viz Enhancements, Threshold Alerts, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "2"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau November 2025",
+            "id" : "cs_d8345271-1bf0-4a95-bd8c-c9125395b069",
+            "source_id" : 0,
+            "text" : "Tableau November 2025 Release has new capabilities to help you uncover data-driven insights faster. Highlights include MCP Server, Published Data Sources, External Embedding, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "2"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau January 2026",
+            "id" : "cs_40c0f3c4-c3b7-480e-95e4-5e15771e7d67",
+            "source_id" : 0,
+            "text" : "Tableau January 2026 offers new capabilities to track and access your data. Highlights include Pace to Goal Insight, Mark Favorite Metrics, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "2"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau October 2025",
+            "id" : "cs_c629a6cd-1b65-4bc2-adc8-9433769eb185",
+            "source_id" : 0,
+            "text" : "Tableau October 2025 Release has new capabilities to help you make smarter decisions. Highlights include Inspector, Tableau Next Slack Enhancements, Visualizations and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "2"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2024.3",
+            "id" : "cs_60ce907a-a990-41c9-91ca-b57e00c43bba",
+            "source_id" : 0,
+            "text" : "Tableau 2024.3 offers new ways to visualize your data and makes it easier for organizations to administer analytics at scale. Highlights include Tableau Cloud Manager, Table Viz Extension, Spatial Parameters, Tableau Cloud App for Microsoft Teams, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "2"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2025.3",
+            "id" : "cs_7db49726-cff6-41ce-b738-f5c7b49d60e1",
+            "source_id" : 0,
+            "text" : "Tableau 2025.3 offers new capabilities to help you unlock AI-powered analytics where you work. Highlights include Q&A Calibration, Tableau Agent in Tableau Server, Dashboard Narratives and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "2"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2025.2",
+            "id" : "cs_8221d58b-d149-43b2-bca2-d5f43166007b",
+            "source_id" : 0,
+            "text" : "Tableau 2025.2 has new capabilities to help you deliver trusted insights with agentic analytics and embed vizzes and metrics where you need them. Highlights include Concierge, Semantic Learning, Tableau App for Google Workspace, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "2"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2025.1",
+            "id" : "cs_c930c862-1f28-446d-8d31-66c1eec52861",
+            "source_id" : 0,
+            "text" : "Tableau 2025.1 offers new ways to enhance your analytics with AI-powered solutions and provides early access to experience future releases. Highlights include Tableau Agent Multilingual Support, Private Connect for Tableau Cloud, Tableau Cloud Release Preview Sites and more."
+          } ],
+          "search_results_persist" : { }
+        },
+        "type" : "json"
+      } ],
+      "name" : "KnowledgeSearch",
+      "status" : "success",
+      "tool_use_id" : "toolu_bdrk_011DVk8Y78YUFFoBpkEVLpV2",
+      "type" : "cortex_search"
+    },
+    "type" : "tool_result"
+  }, {
+    "tool_use" : {
+      "client_side_execute" : false,
+      "input" : {
+        "agentic_search" : false,
+        "columns" : [ "RELEASE_NAME", "URL" ],
+        "limit" : 10,
+        "query" : "Tableau March 2026 new features details"
+      },
+      "name" : "KnowledgeSearch",
+      "tool_use_id" : "toolu_bdrk_01P8R7eNbtLwSUzkKfh5iCeK",
+      "type" : "cortex_search"
+    },
+    "type" : "tool_use"
+  }, {
+    "tool_result" : {
+      "content" : [ {
+        "json" : {
+          "search_results" : [ {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "3"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau March 2026",
+            "id" : "cs_673f3365-6bc7-452b-914a-6053276d95b8",
+            "source_id" : 0,
+            "text" : "Tableau March 2026 offers new capabilities to access smarter insights. Highlights include Rule-Based Semantic Model Authoring, Viz Enhancements, Enhanced Q&A Improvements, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "2"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau January 2026",
+            "id" : "cs_6b882345-14a8-46e4-aa1b-b5216fe60455",
+            "source_id" : 0,
+            "text" : "Tableau January 2026 offers new capabilities to track and access your data. Highlights include Pace to Goal Insight, Mark Favorite Metrics, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "2"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2026.1",
+            "id" : "cs_2f9f35d0-8f8b-41f2-a579-308e189f2461",
+            "source_id" : 0,
+            "text" : "Tableau 2026.1 has new end-to-end capabilities to build, test, and share your insights. Highlights include Auto-Generate Semantic Models from Workspaces, Q&A Calibration, Enhanced Q&A Updates, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "2"
+            },
+            "doc_id" : "https://learn.microsoft.com/en-us/power-bi/fundamentals/whats-new",
+            "doc_title" : "March 2026",
+            "id" : "cs_148e0ce3-7536-4f3d-9547-a341c0274b97",
+            "source_id" : 0,
+            "text" : "Power BI's March 2026 update delivers powerful enhancements across reporting, AI, modeling, and visuals. Translytical task flows move to general availability, enabling end users to take action directly from reports. Modern visual defaults (preview) bring a fresh Fluent 2 design to your reports. Direct Lake in OneLake reaches general availability, unlocking incredible performance directly against OneLake. Plus, custom totals, series label leader lines, updated Copilot experiences, and expanded DAX capabilities make this a feature-packed release.\n\nGeneral:\n- Upcoming deprecation of old file picker experience in Power BI Desktop\n\nCopilot and AI:\n- Copilot pane user experience update\n- Copilot feedback update\n\nReporting:\n- Translytical task flows (Generally Available)\n- Modern visual defaults and customizing theme improvements (Preview)\n- Custom totals (Preview)\n- Series label leader lines for line charts\n- Report Theme Updates\n- Input slicer now supports conditional formatting\n\nModeling:\n- Direct Lake in OneLake (Generally Available)\n- TMDL View in web modeling (Preview)\n- DAX user-defined functions (Preview)\n\nData connectivity:\n- IBM Netezza ODBC Driver (Generally Available)\n- QuickBooks Online Connector Retirement\n\nVisualizations:\n- AI Narrative auto refresh"
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "2"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2023.3",
+            "id" : "cs_25d86e5d-cde9-4726-9923-9c5f8f5737d0",
+            "source_id" : 0,
+            "text" : "Tableau 2023.3 has new capabilities that help you see, understand, and act on your data. Highlights include dynamic axis ranges, the Embedding Playground, the native Lightning Web Component for Tableau, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "2"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2025.3",
+            "id" : "cs_5ecbb059-b5b5-48c4-8d8f-a808e26722f8",
+            "source_id" : 0,
+            "text" : "Tableau 2025.3 offers new capabilities to help you unlock AI-powered analytics where you work. Highlights include Q&A Calibration, Tableau Agent in Tableau Server, Dashboard Narratives and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau November 2025",
+            "id" : "cs_fa3bf339-5e77-4f8f-8e48-9ab09f071ba0",
+            "source_id" : 0,
+            "text" : "Tableau November 2025 Release has new capabilities to help you uncover data-driven insights faster. Highlights include MCP Server, Published Data Sources, External Embedding, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2023.2",
+            "id" : "cs_e467fb16-88d2-4522-a886-3f8238d33107",
+            "source_id" : 0,
+            "text" : "Tableau 2023.2 has new capabilities that help you analyze your data more effectively and efficiently. Highlights include unified tooltips, a new Data Cloud connector, multi-row calculations in Tableau Prep, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2024.3",
+            "id" : "cs_fed345bf-1801-4f99-87a9-d3c5ca175117",
+            "source_id" : 0,
+            "text" : "Tableau 2024.3 offers new ways to visualize your data and makes it easier for organizations to administer analytics at scale. Highlights include Tableau Cloud Manager, Table Viz Extension, Spatial Parameters, Tableau Cloud App for Microsoft Teams, and more."
+          }, {
+            "columns" : {
+              "@CONFIDENCE_SCORE" : "1"
+            },
+            "doc_id" : "https://www.tableau.com/products/all-features",
+            "doc_title" : "Tableau 2024.1",
+            "id" : "cs_49ef0f62-154e-4c5b-9811-537f27804882",
+            "source_id" : 0,
+            "text" : "Tableau 2024.1 has new capabilities that help you drive better and faster decision-making with trusted generative AI. Highlights include Tableau Pulse, Amazon Marketplace availability, Viz Navigation for Text Table, and more."
+          } ],
+          "search_results_persist" : { }
+        },
+        "type" : "json"
+      } ],
+      "name" : "KnowledgeSearch",
+      "status" : "success",
+      "tool_use_id" : "toolu_bdrk_01P8R7eNbtLwSUzkKfh5iCeK",
+      "type" : "cortex_search"
+    },
+    "type" : "tool_result"
+  }, {
+    "thinking" : {
+      "text" : "\nThe user wants to know what's new in Tableau. Based on the search results, I can see the most recent Tableau releases. The latest ones are:\n\n1. Tableau March 2026 - Rule-Based Semantic Model Authoring, Viz Enhancements, Enhanced Q&A Improvements\n2. Tableau 2026.1 - Auto-Generate Semantic Models from Workspaces, Q&A Calibration, Enhanced Q&A Updates\n3. Tableau January 2026 - Pace to Goal Insight, Mark Favorite Metrics\n\nLet me focus on the most recent releases (2026 and late 2025) to give a comprehensive \"what's new\" list. I'll compile up to 10 bullet points from the most recent features.\n"
+    },
+    "type" : "thinking"
+  }, {
+    "text" : "\n\nHere's what's new in Tableau based on the latest releases:\n\n- **Auto-Generate Semantic Models from Workspaces** — automatically create semantic models from your existing workspaces for faster analytics setup\n- **Rule-Based Semantic Model Authoring** — define semantic models using business rules for smarter, more governed insights\n- **Enhanced Q&A Improvements** — upgraded natural language querying for more accurate and intuitive data exploration\n- **Q&A Calibration** — fine-tune Q&A responses to better align with your organization's terminology and data\n- **Pace to Goal Insight** — track progress toward targets with built-in goal-pacing analytics\n- **Mark Favorite Metrics** — quickly bookmark and access the metrics that matter most to you\n- **Viz Enhancements** — visual improvements for richer, more expressive dashboards and charts\n- **MCP Server Support** — connect Tableau to external AI agents and tools via the Model Context Protocol\n- **Tableau Agent in Tableau Server** — AI-powered conversational analytics now available on Tableau Server\n- **Dashboard Narratives** — auto-generated text summaries that explain key insights directly within dashboards\n\n",
+    "type" : "text"
+  } ],
+  "metadata" : {
+    "usage" : {
+      "tokens_consumed" : [ {
+        "context_window" : 200000,
+        "input_tokens" : {
+          "cache_read" : 30290,
+          "cache_write" : 4357,
+          "total" : 34652,
+          "uncached" : 5
+        },
+        "model_name" : "claude-opus-4-6",
+        "output_tokens" : {
+          "total" : 893
+        }
+      } ]
+    }
+  },
+  "role" : "assistant",
+  "schema_version" : "v2",
+  "sequence_number" : 197,
+  "status" : "completed"
+}
