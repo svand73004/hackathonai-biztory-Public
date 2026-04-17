@@ -26,7 +26,7 @@ function App() {
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center gap-4">
             <img src={biztoryLogo} alt="Biztory Logo" className="h-10 md:h-12 w-auto object-contain brightness-0 invert" />
-            <h1 className="text-xl md:text-3xl font-bold tracking-tight text-white hidden sm:block">The Knowledge Master</h1>
+            <h1 className="text-xl md:text-3xl font-bold tracking-tight text-white hidden sm:block">The KNOWELDGE Master</h1>
           </div>
           <nav>
             <ul className="flex space-x-4 md:space-x-6 font-medium">
