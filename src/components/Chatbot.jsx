@@ -12,7 +12,7 @@ const Chatbot = () => {
   const [messages, setMessages] = useState([
     {
       role: 'bot',
-      content: "Hey I'm the Biztory WhatNew Chatbot and I'm here to help you understand all the new feature in out tool library",
+      content: "Hey I'm the Biztory WhatNew Chatbot and I'm here to help you understand all the new features in our tool library",
     },
   ]);
   const [input, setInput] = useState('');
